@@ -68,10 +68,6 @@ function App() {
         <Route path='/Projects' component={HomePage2} />
       </Switch>
       </div>
-      <Switch>
-        <Route path='/' exact component={HomePage} />
-        <Route path='/Projects' component={HomePage2} />
-      </Switch>
     </ThemeProvider>
     </Router>
   );

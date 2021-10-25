@@ -146,13 +146,13 @@ function HomeBar(props) {
           <ListItem
             button
             onClick={() => {
-              window.location.href = 'https://google.com';
+              window.location.href = '/';
             }}
           >
             <ListItemIcon>
               <InfoIcon />
             </ListItemIcon>
-            <ListItemText primary='About' />
+            <ListItemText primary='Home' />
           </ListItem>
         </List>
       </Drawer>
