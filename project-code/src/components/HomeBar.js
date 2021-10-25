@@ -127,12 +127,12 @@ function HomeBar(props) {
           </IconButton>
         </div>
         <Divider />
-        {['Page 1', 'Page 2', 'Etc...'].map((text, index) => (
+        {['Our Projects'].map((text, index) => (
           <ListItem
             button
             key={text}
             onClick={() => {
-              window.location.href = 'https://google.com';
+              window.location.href = 'Projects';
             }}
           >
             <ListItemIcon>

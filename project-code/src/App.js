@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import './App.css';
 import HomeBar from './components/HomeBar';
 import HomePage from './components/HomePage.js';
+import Projects from './components/Projects.js';
 
 import {
   createMuiTheme,
@@ -11,6 +13,7 @@ import {
 } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import './font-import.css';
+import HomePage2 from './components/Projects.js';
 
 // let lightTheme = createMuiTheme({
 //   typography: {
@@ -52,6 +55,7 @@ function App() {
   };
 
   return (
+    <Router>
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
       <div className='App'>
@@ -59,9 +63,17 @@ function App() {
           handleThemeChange={handleThemeChange}
           darkState={darkState}
         ></HomeBar>
-        <HomePage></HomePage>
+        <Switch>
+        <Route path='/' exact component={HomePage} />
+        <Route path='/Projects' component={HomePage2} />
+      </Switch>
       </div>
+      <Switch>
+        <Route path='/' exact component={HomePage} />
+        <Route path='/Projects' component={HomePage2} />
+      </Switch>
     </ThemeProvider>
+    </Router>
   );
 }
 
