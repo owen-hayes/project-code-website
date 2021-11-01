@@ -64,44 +64,49 @@ const useStyles = makeStyles((theme) => ({
           <Box fontWeight='fontWeightBold'>Executives</Box>
           </Typography>
           </Grid>
-          <Grid item xs={1}></Grid>
-            <Grid item xs={10} sm={10} md={5} lg={2} xl={2}>
+          <Grid item lg={1}></Grid>
+            <Grid item xs={10} sm={10} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 1
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
+
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 2
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 3
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 4
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 5
               </Paper>
             </Grid>
-            <Grid item xs={1}></Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item lg={1}></Grid>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 6
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 7
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 8
               </Paper>
@@ -113,44 +118,44 @@ const useStyles = makeStyles((theme) => ({
           <Box fontWeight='fontWeightBold'>Project Leads</Box>
           </Typography>
           </Grid>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={10} sm={10} md={5} lg={2} xl={2}>
+          <Grid item lg={1}></Grid>
+          <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 1
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 2
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 3
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 4
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 5
               </Paper>
             </Grid>
-            <Grid item xs={1}></Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item lg={1}></Grid>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 6
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 7
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 8
               </Paper>
@@ -162,44 +167,44 @@ const useStyles = makeStyles((theme) => ({
           <Box fontWeight='fontWeightBold'>Members</Box>
           </Typography>
           </Grid>
-          <Grid item xs={1}></Grid>
-          <Grid item xs={10} sm={10} md={5} lg={2} xl={2}>
+          <Grid item lg={1}></Grid>
+          <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 1
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 2
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 3
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 4
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 5
               </Paper>
             </Grid>
-            <Grid item xs={1}></Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item lg={1}></Grid>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 6
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 7
               </Paper>
             </Grid>
-            <Grid item xs={12} sm={12} md={6} lg={2} xl={4}>
+            <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
                 Slot 8
               </Paper>
