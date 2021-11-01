@@ -93,7 +93,7 @@ function HomeBar(props) {
               >
                 <Typography variant='h4'>
                   {/* <b>Project: Code</b> */}
-                  <img src='./logo-cropped.png' height='75 px' />
+                  <img src='./Images/logo-cropped.png' height='75 px' />
                 </Typography>
               </Grid>
             </Grid>
@@ -127,12 +127,12 @@ function HomeBar(props) {
           </IconButton>
         </div>
         <Divider />
-        {['Our Projects'].map((text, index) => (
+        {['Projects'].map((text, index) => (
           <ListItem
             button
             key={text}
             onClick={() => {
-              window.location.href = 'Projects';
+              window.location.href = 'projects';
             }}
           >
             <ListItemIcon>
@@ -153,6 +153,19 @@ function HomeBar(props) {
               <InfoIcon />
             </ListItemIcon>
             <ListItemText primary='Home' />
+          </ListItem>
+        </List>
+        <List>
+          <ListItem
+            button
+            onClick={() => {
+              window.location.href = 'members';
+            }}
+          >
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary='Members' />
           </ListItem>
         </List>
       </Drawer>

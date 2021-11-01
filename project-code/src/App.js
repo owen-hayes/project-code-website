@@ -4,7 +4,6 @@ import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import HomeBar from './components/HomeBar';
 import HomePage from './components/HomePage.js';
-import Projects from './components/Projects.js';
 
 import {
   createMuiTheme,
@@ -14,6 +13,8 @@ import {
 import { CssBaseline } from '@material-ui/core';
 import './font-import.css';
 import HomePage2 from './components/Projects.js';
+import Projectlist from './components/Projects.js';
+import Memberlist from './components/Members';
 
 // let lightTheme = createMuiTheme({
 //   typography: {
@@ -65,7 +66,8 @@ function App() {
         ></HomeBar>
         <Switch>
         <Route path='/' exact component={HomePage} />
-        <Route path='/Projects' component={HomePage2} />
+        <Route path='/projects' component={Projectlist} />
+        <Route path='/members' component={Memberlist}/>
       </Switch>
       </div>
     </ThemeProvider>

@@ -41,7 +41,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function HomePage2() {
+export default function Projectlist() {
   const classes = useStyles();
   const [showTyping, setShowTyping] = useState(false);
   const [showStatic, setShowStatic] = useState(false);
@@ -58,12 +58,18 @@ export default function HomePage2() {
       <Container maxWidth='xl'>
         <Grid justify='center' container spacing={8} columnSpacing={{ xs: 1, sm: 1, md: 2 , lg: 3, xl: 3}}>
           <Grid item xs={12}></Grid>
-          <Grid item xs={12} sm={12} md={6} lg={4} xl={6}>
+          <Grid item xs={12} sm={12} md={6} lg={3} xl={3}>
             <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-              Slot 1
+              <img src='./Images/Covid-Data-Image(12-12-2020)(SAMPLE).png' height='310 px' />
+              <Box fontWeight='fontWeightBold'>Visualization of Covid Data across Illinois Counties</Box>
+              By Jimmy Berg, Gabe Grais, and Kai Loh
+              <Box fontWeight='fontWeightBold'>
+              <a id="Data-Vis-Heroku-1" title="Go to Heroku Container"
+              href="https://projectcode-coviddata.herokuapp.com/"> Click here to view</a>
+              </Box>
             </Paper>
           </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={4} xl={6}>
+          <Grid item xs={12} sm={12} md={6} lg={4} xl={4}>
             <Paper className={`${classes.paper} ${classes.leftAlign}`}>
               Slot 2
             </Paper>
