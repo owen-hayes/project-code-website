@@ -155,6 +155,21 @@ function HomeBar(props) {
             <ListItemText primary='Home' />
           </ListItem>
         </List>
+        <Divider />
+        <List>
+          <ListItem
+            button
+            onClick={() => {
+              window.location.href = 'profiles';
+            }}
+          >
+            <ListItemIcon>
+              <InfoIcon />
+            </ListItemIcon>
+            <ListItemText primary='Profiles' />
+          </ListItem>
+        </List>
+        <Divider />
         <List>
           <ListItem
             button

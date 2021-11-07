@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './App.css';
 import HomeBar from './components/HomeBar';
 import HomePage from './components/HomePage.js';
-
+import ProfilePage from './components/ProfilePage.js';
 import {
   createMuiTheme,
   ThemeProvider,
@@ -68,6 +68,7 @@ function App() {
         <Route path='/' exact component={HomePage} />
         <Route path='/projects' component={Projectlist} />
         <Route path='/members' component={Memberlist}/>
+        <Route path='/profiles' component={ProfilePage}/>
       </Switch>
       </div>
     </ThemeProvider>
