@@ -11,7 +11,18 @@ const Profiles = () => {
     "Blah blah blah blah blah blah blah blah", 
     "https://pbs.twimg.com/profile_images/723189645136162819/A8Wnf7xu_400x400.jpg"
   ];
-  const images = [Kuro, Kuro, Kuro,Kuro,Kuro, Kuro, Kuro, Kuro, Kuro, Kuro];
+  const Mob = [
+    "Mob",
+    "kjashdf as;jdflas laskjdflas alksjfdlas kjfdnasf lasjdf",
+    "https://i.pinimg.com/474x/d7/80/c0/d780c0561f65363f73bd354c359c71fd.jpg"
+  ]
+  const Kisuke = [
+    "Kisuke",
+    "piower powierpi oiwerpoqiw piertpeoi pwoeirpqowier p",
+    "https://pbs.twimg.com/profile_images/587517723929739264/1XpWFmch_400x400.jpg"
+  ]
+  
+  const images = [Kuro, Mob, Kuro, Mob, Kuro, Kisuke, Mob, Kuro, Kisuke, Mob];
 
   const NextArrow = ({onClick}) => {
     return (
