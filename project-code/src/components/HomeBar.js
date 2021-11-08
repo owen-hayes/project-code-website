@@ -20,6 +20,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
 import Switch from '@material-ui/core/Switch';
+import GoogleLoginComponent from './GoogleLoginButton';
 
 const drawerWidth = 240;
 
@@ -102,9 +103,10 @@ function HomeBar(props) {
             checked={props.darkState}
             onChange={props.handleThemeChange}
           />
-          <Button color='secondary' variant='contained'>
+          <GoogleLoginComponent/>
+          { /* <Button color='secondary' variant='contained'>
             Login
-          </Button>
+            </Button> */ }
         </Toolbar>
       </AppBar>
       {/* TODO: Add gradient thing when <Drawer> is open */}

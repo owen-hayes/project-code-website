@@ -12,7 +12,6 @@ import {
 } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import './font-import.css';
-import HomePage2 from './components/Projects.js';
 import Projectlist from './components/Projects.js';
 import Memberlist from './components/Members';
 

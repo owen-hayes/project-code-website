@@ -52,8 +52,10 @@ const useStyles = makeStyles((theme) => ({
       }, 1000);
       return () => clearTimeout(timer);
     }, []);
-  
+    
+    
     return (
+      // add drop down menu for semester
       <div className={classes.root}>
         <Container maxWidth='xl'>
           <Grid justify='center' container spacing={10} columnSpacing={{ xs: 1, sm: 1, md: 2 , lg: 2, xl: 2}}>
@@ -72,43 +74,70 @@ const useStyles = makeStyles((theme) => ({
                 <Box fontFamily='Verdana'> Email</Box>
                 <Box fontFamily='Verdana'> Year and Major</Box>
                 <Box fontFamily='Verdana'> Fun Fact!</Box>
-
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 2
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 3
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 4
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 5
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item lg={1}></Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 6
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 7
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 8
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
           <Grid item xs={12}></Grid>
@@ -121,43 +150,75 @@ const useStyles = makeStyles((theme) => ({
           <Grid item lg={1}></Grid>
           <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 1
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 2
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 3
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 4
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 5
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item lg={1}></Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 6
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 7
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 8
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
           <Grid item xs={12}></Grid>
@@ -170,43 +231,75 @@ const useStyles = makeStyles((theme) => ({
           <Grid item lg={1}></Grid>
           <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 1
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 2
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 3
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 4
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 5
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item lg={1}></Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 6
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 7
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
             <Grid item xs={12} sm={12} md={6} lg={2} xl={2}>
               <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-                Slot 8
+              <img src='./Images/Default-avatar.png' height='191 px' />
+                <Box fontFamily='Verdana'> Name</Box>
+                <Box fontFamily='Verdana'> Email</Box>
+                <Box fontFamily='Verdana'> Year and Major</Box>
+                <Box fontFamily='Verdana'> Fun Fact!</Box>
               </Paper>
             </Grid>
           </Grid>

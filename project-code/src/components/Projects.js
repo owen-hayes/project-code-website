@@ -63,6 +63,10 @@ export default function Projectlist() {
               <img src='./Images/Covid-Data-Image(12-12-2020)(SAMPLE).png' height='310 px' />
               <Box fontWeight='fontWeightBold'>Visualization of Covid Data across Illinois Counties</Box>
               By Jimmy Berg, Gabe Grais, and Kai Loh
+              <Box fontStyle = 'italic'> Published on 7/20/21</Box>
+              <Box> A flask application that takes in a date and displays covid data across Illinois Counties at that date.
+                Clicking on a county gives a graph of cofirmed covid cases over the year.
+              </Box>
               <Box fontWeight='fontWeightBold'>
               <a id="Data-Vis-Heroku-1" title="Go to Heroku Container"
               href="https://projectcode-coviddata.herokuapp.com/"> Click here to view</a>
