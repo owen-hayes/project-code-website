@@ -22,7 +22,7 @@ const Profiles = () => {
     "https://pbs.twimg.com/profile_images/587517723929739264/1XpWFmch_400x400.jpg"
   ]
   
-  const images = [Kuro, Mob, Kuro, Mob, Kuro, Kisuke, Mob, Kuro, Kisuke, Mob];
+  const profiles = [Kuro, Mob, Kuro, Mob, Kuro, Kisuke, Mob, Kuro, Kisuke, Mob];
 
   const NextArrow = ({onClick}) => {
     return (
@@ -40,7 +40,7 @@ const Profiles = () => {
   }
 
   //tracking image index:
-  const [imageIndex, setImageIndex] = useState(0);
+  const [profileIndex, setProfileIndex] = useState(0);
 
   //Settings for our slider
   const settings = {
@@ -52,17 +52,17 @@ const Profiles = () => {
     centerPadding: 10,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
-    beforeChange: (current,next) => setImageIndex(next),
+    beforeChange: (current,next) => setProfileIndex(next),
   };
   return(
     <div className="app">
       <Slider {...settings}>
-        {images.map((img, index) => (
-          <div className={index == imageIndex ? "slide activeSlide" : "slide"}>
+        {profiles.map((profile, index) => (
+          <div className={index == profileIndex ? "slide activeSlide" : "slide"}>
             <Profile
-              name = {img[0]}
-              info = {img[1]}
-              image = {img[2]}
+              name = {profile[0]}
+              info = {profile[1]}
+              image = {profile[2]}
             />
           </div>
         ))}
