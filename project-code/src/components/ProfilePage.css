@@ -3,12 +3,12 @@
 
 .slide {
   transform: scale(0.75);
-  transition: transform 300ms;
-
+  transition: 300ms;
 }
+
 .activeSlide {
   transform: scale(1);
-
+  transition: 300ms;
 }
 .arrow {
   position: absolute;
@@ -36,10 +36,10 @@
 .profile{
   filter: drop-shadow(0 0 0.75rem gray);
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   margin-left: auto;
   margin-right: auto;
-  padding: 10px;
+  padding: 2px;
   border: 1px solid crimson;
   height: 300px;
   width: 200px;
@@ -47,11 +47,10 @@
   border-radius: 30px;
   justify-content: center;
   align-items: center;
-
 }
 .center{
   text-align: center;
-  padding: 2px;
+  padding: 5px;
 }
 
 

@@ -45,11 +45,9 @@ const Profiles = () => {
   //Settings for our slider
   const settings = {
     infinite: true,
-    lazyLoad: true,
     speed: 300,
-    slidesToShow: 5,
+    variableWidth: true,
     centerMode: true,
-    centerPadding: 10,
     nextArrow: <NextArrow />,
     prevArrow: <PrevArrow />,
     beforeChange: (current,next) => setProfileIndex(next),
