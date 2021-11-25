@@ -53,7 +53,7 @@ const Profiles = () => {
     beforeChange: (current,next) => setProfileIndex(next),
   };
   return(
-    <div className="app">
+    <div >
       <Slider {...settings}>
         {profiles.map((profile, index) => (
           <div className={index == profileIndex ? "slide activeSlide" : "slide"}>
