@@ -18,7 +18,7 @@ const Profiles = () => {
   ]
   const Kisuke = [
     "Kisuke",
-    "piower powierpi oiwerpoqiw piertpeoi pwoeirpqowier p",
+    "piower powierpi oiwerpoqiw piertpeoi pwoeirpqowier p aldjfl lskajflaskf alskdjfalskjfda lakjsdflkajsd lkjsadfljasdf akjdsfhklasjhdfkahskldfjashdfklahsdkfhaksdhjfahsink vfklhadflkva fkajhdfk;lvnakd nfvkajh;dfhvav d",
     "https://pbs.twimg.com/profile_images/587517723929739264/1XpWFmch_400x400.jpg"
   ]
   
