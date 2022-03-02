@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import './App.css';
-import HomeBar from './components/HomeBar';
+import HomeBar from './components/navbar/HomeBar';
 import HomePage from './components/HomePage.js';
 
 import {
@@ -9,7 +9,7 @@ import {
   ThemeProvider,
   responsiveFontSizes,
 } from '@material-ui/core/styles';
-import { CssBaseline } from '@material-ui/core';
+import { CssBaseline } from '@mui/material';
 import './font-import.css';
 
 // let lightTheme = createMuiTheme({

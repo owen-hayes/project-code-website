@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+import ThemeToggle from './ThemeToggle';
+
 import Button from '@material-ui/core/Button';
 import Drawer from '@material-ui/core/Drawer';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
@@ -19,7 +20,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import List from '@material-ui/core/List';
-import Switch from '@material-ui/core/Switch';
 
 const drawerWidth = 240;
 
@@ -57,7 +57,6 @@ function HomeBar(props) {
   const classes = useStyles();
   const theme = useTheme();
 
-  const preventDefault = (event) => event.preventDefault();
   const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
@@ -93,15 +92,14 @@ function HomeBar(props) {
               >
                 <Typography variant='h4'>
                   {/* <b>Project: Code</b> */}
-                  <img src='./logo-cropped.png' height='75 px' />
+                  <img src='./logo-cropped.png' alt='Project Code logo' height='75 px' />
                 </Typography>
               </Grid>
             </Grid>
           </Typography>
-          <Switch
-            checked={props.darkState}
-            onChange={props.handleThemeChange}
-          />
+          <ThemeToggle 
+            darkState={props.darkState} 
+            handleThemeChange={props.handleThemeChange} />
           <Button color='secondary' variant='contained'>
             Login
           </Button>
