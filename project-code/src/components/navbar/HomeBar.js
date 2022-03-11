@@ -1,25 +1,25 @@
 import React from 'react';
 import ThemeToggle from './ThemeToggle';
 
-import Button from '@material-ui/core/Button';
-import Drawer from '@material-ui/core/Drawer';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
-import Grid from '@material-ui/core/Grid';
+import Button from '@mui/material/Button';
+import Drawer from '@mui/material/Drawer';
+import makeStyles from '@mui/styles/makeStyles';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
+import Grid from '@mui/material/Grid';
 
-import Divider from '@material-ui/core/Divider';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import StarIcon from '@material-ui/icons/Star';
-import InfoIcon from '@material-ui/icons/Info';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import List from '@material-ui/core/List';
+import Divider from '@mui/material/Divider';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import StarIcon from '@mui/icons-material/Star';
+import InfoIcon from '@mui/icons-material/Info';
+import ListItem from '@mui/material/ListItem';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import List from '@mui/material/List';
 import { useTheme } from '@mui/styles';
 
 const drawerWidth = 240;
@@ -72,16 +72,16 @@ function HomeBar(props) {
     <div className={classes.root}>
       <AppBar
         position='static'
-        style={{ backgroundColor: theme.palette.barBg.main, color: 'black' }}
+        style={{ backgroundColor: theme.palette.barBg.main, color: 'primary' }}
       >
         <Toolbar>
           <IconButton
             edge='start'
             className={classes.menuButton}
             onClick={handleDrawerOpen}
-            color={theme.palette.secondary.dark}
+            color='secondary'
             aria-label='menu'
-          >
+            size="large">
             <MenuIcon />
           </IconButton>
           <Typography variant='h1' className={classes.title}>
@@ -117,7 +117,7 @@ function HomeBar(props) {
         }}
       >
         <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose}>
+          <IconButton onClick={handleDrawerClose} size="large">
             {theme.direction === 'ltr' ? (
               <ChevronLeftIcon />
             ) : (

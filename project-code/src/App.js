@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
+import { adaptV4Theme } from '@mui/material/styles';
+
 import './App.css';
 import HomeBar from './components/navbar/HomeBar';
 import HomePage from './components/HomePage.js';
 
-import { CssBaseline, createTheme, ThemeProvider } from '@mui/material';
+import { CssBaseline, createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material';
 import './font-import.css';
 
 // let lightTheme = createMuiTheme({
@@ -36,7 +38,7 @@ function App() {
       fontFamily: '"Raleway", "Helvetica"',
     },
     palette: {
-      type: palletType,
+      mode: palletType,
       primary: { main: mainPrimaryColor },
       secondary: { main: mainSecondaryColor },
       barBg: { main: mainBarColor, black: '#333333', white: '#f5f5f5' },
@@ -47,16 +49,18 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={darkTheme}>
-      <CssBaseline />
-      <div className='App'>
-        <HomeBar
-          handleThemeChange={handleThemeChange}
-          darkState={darkState}
-        ></HomeBar>
-        <HomePage></HomePage>
-      </div>
-    </ThemeProvider>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={darkTheme}>
+        <CssBaseline />
+        <div className='App'>
+          <HomeBar
+            handleThemeChange={handleThemeChange}
+            darkState={darkState}
+          ></HomeBar>
+          <HomePage></HomePage>
+        </div>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 

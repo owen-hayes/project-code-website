@@ -1,12 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper, Container, Box, Typography } from '@material-ui/core';
-import Image from 'material-ui-image';
-import {
-  createMuiTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from '@material-ui/core/styles';
+import makeStyles from '@mui/styles/makeStyles';
+import { Grid, Paper, Container, Box, Typography } from '@mui/material';
 import ReactRotatingText from 'react-rotating-text';
 
 const useStyles = makeStyles((theme) => ({
@@ -59,9 +53,9 @@ export default function HomePage() {
   return (
     <div className={classes.root}>
       <Container maxWidth='xl'>
-        <Grid justify='center' container spacing={3}>
+        <Grid justifyContent='center' container spacing={3}>
           <Grid item xs={12}></Grid>
-          <Grid item container xs={12} justify='center'>
+          <Grid item container xs={12} justifyContent='center'>
             <Paper className={classes.paper}>
               <Typography
                 variant='h5'
