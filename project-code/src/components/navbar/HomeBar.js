@@ -15,11 +15,9 @@ import Divider from '@mui/material/Divider';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import StarIcon from '@mui/icons-material/Star';
-import InfoIcon from '@mui/icons-material/Info';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import List from '@mui/material/List';
 import { Link } from "react-router-dom";
 import { useTheme } from '@mui/styles';
 
@@ -28,15 +26,6 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-  appbar: {
-    alignItems: 'center',
   },
   drawer: {
     width: drawerWidth,
@@ -53,6 +42,22 @@ const useStyles = makeStyles((theme) => ({
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
   },
+  toolbar: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center'
+  },
+  rightGroup: {
+    display: 'flex',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  menuButton: {
+    marginLeft: '.5rem',
+  },
+  themeToggle: {
+    marginRight: '.5rem',
+  }
 }));
 
 function HomeBar(props) {
@@ -75,36 +80,29 @@ function HomeBar(props) {
         position='static'
         style={{ backgroundColor: theme.palette.barBg.main, color: 'primary' }}
       >
-        <Toolbar>
-          <IconButton
-            edge='start'
-            className={classes.menuButton}
-            onClick={handleDrawerOpen}
-            color='secondary'
-            aria-label='menu'
-            size="large">
-            <MenuIcon />
-          </IconButton>
-          <Typography variant='h1' className={classes.title}>
-            <Grid container>
-              <Grid
-                item
-                xs={12}
-                style={{ textAlign: 'center', fontFamily: 'Raleway' }}
-              >
-                <Typography variant='h4'>
-                  {/* <b>Project: Code</b> */}
-                  <Link to="/"><img src='./logo-cropped.png' alt='Project Code logo' height='75 px' /></Link>
-                </Typography>
-              </Grid>
-            </Grid>
-          </Typography>
-          <ThemeToggle 
-            darkState={props.darkState} 
-            handleThemeChange={props.handleThemeChange} />
-          <Button color='secondary' variant='contained'>
-            Login
-          </Button>
+        <Toolbar className={classes.toolbar}>
+          <Link to="/"><img src='./logo-cropped.png' alt='Project Code logo' height='75 px' /></Link>
+          
+          <div className={classes.rightGroup}>
+            <ThemeToggle 
+              darkState={props.darkState} 
+              handleThemeChange={props.handleThemeChange} />
+            
+            <Button color='secondary' variant='contained'>
+              Login
+            </Button>
+
+            <IconButton
+              edge='start'
+              className={classes.menuButton}
+              onClick={handleDrawerOpen}
+              color='secondary'
+              aria-label='menu'
+              size="large">
+              <MenuIcon />
+            </IconButton>
+          </div>
+
         </Toolbar>
       </AppBar>
       {/* TODO: Add gradient thing when <Drawer> is open */}
