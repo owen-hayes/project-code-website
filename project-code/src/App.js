@@ -4,12 +4,7 @@ import './App.css';
 import HomeBar from './components/navbar/HomeBar';
 import HomePage from './components/HomePage.js';
 
-import {
-  createMuiTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from '@material-ui/core/styles';
-import { CssBaseline } from '@mui/material';
+import { CssBaseline, createTheme, ThemeProvider } from '@mui/material';
 import './font-import.css';
 
 // let lightTheme = createMuiTheme({
@@ -36,7 +31,7 @@ function App() {
   const mainPrimaryColor = darkState ? '#262626' : '#c4c4c4';
   const mainSecondaryColor = darkState ? '#fc4e47' : '#fc4e47';
   const mainBarColor = darkState ? '#4d4d4d' : '#ebebeb';
-  const darkTheme = createMuiTheme({
+  const darkTheme = createTheme({
     typography: {
       fontFamily: '"Raleway", "Helvetica"',
     },
@@ -44,7 +39,7 @@ function App() {
       type: palletType,
       primary: { main: mainPrimaryColor },
       secondary: { main: mainSecondaryColor },
-      barBg: { main: mainBarColor },
+      barBg: { main: mainBarColor, black: '#333333', white: '#f5f5f5' },
     },
   });
   const handleThemeChange = () => {

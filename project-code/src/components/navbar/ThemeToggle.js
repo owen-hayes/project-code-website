@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
 import './ThemeToggle.css';
+import { useTheme } from '@mui/material';
 
 export default function ThemeToggle(props) {
 
@@ -9,11 +10,11 @@ export default function ThemeToggle(props) {
         updateTheme(props.darkState);
     }, [props.darkState]);
 
+    const theme = useTheme();
     const updateTheme = (isDarkEnabled) => {
-        const styles = getComputedStyle(document.body);
 
-        const black = styles.getPropertyValue('--black');
-        const white = styles.getPropertyValue('--white');
+        const white = theme.palette.barBg.white;
+        const black = theme.palette.barBg.black;
 
         const docEl = document.documentElement;
         if (isDarkEnabled) {
