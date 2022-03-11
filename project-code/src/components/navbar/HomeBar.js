@@ -20,6 +20,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import List from '@mui/material/List';
+import { Link } from "react-router-dom";
 import { useTheme } from '@mui/styles';
 
 const drawerWidth = 240;
@@ -93,7 +94,7 @@ function HomeBar(props) {
               >
                 <Typography variant='h4'>
                   {/* <b>Project: Code</b> */}
-                  <img src='./logo-cropped.png' alt='Project Code logo' height='75 px' />
+                  <Link to="/"><img src='./logo-cropped.png' alt='Project Code logo' height='75 px' /></Link>
                 </Typography>
               </Grid>
             </Grid>
@@ -130,9 +131,6 @@ function HomeBar(props) {
           <ListItem
             button
             key={text}
-            onClick={() => {
-              window.location.href = 'https://google.com';
-            }}
           >
             <ListItemIcon>
               <StarIcon />
@@ -141,19 +139,16 @@ function HomeBar(props) {
           </ListItem>
         ))}
         <Divider />
-        <List>
-          <ListItem
-            button
-            onClick={() => {
-              window.location.href = 'https://google.com';
-            }}
-          >
+        {/* <List>
+          <ListItem button>
             <ListItemIcon>
               <InfoIcon />
             </ListItemIcon>
             <ListItemText primary='About' />
           </ListItem>
-        </List>
+        </List> */}
+        <Link to="/invoices">Invoices</Link>
+        <Link to="/expenses">Expenses</Link>
       </Drawer>
     </div>
   );

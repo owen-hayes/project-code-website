@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
-import { adaptV4Theme } from '@mui/material/styles';
-
 import './App.css';
 import HomeBar from './components/navbar/HomeBar';
-import HomePage from './components/HomePage.js';
 
-import { CssBaseline, createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material';
+import { CssBaseline, createTheme, ThemeProvider, StyledEngineProvider, Switch } from '@mui/material';
 import './font-import.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Expenses from './components/routes/expenses';
+import Invoices from './components/routes/invoices';
+import HomePage from './components/routes/HomePage';
 
 // let lightTheme = createMuiTheme({
 //   typography: {
@@ -53,11 +54,17 @@ function App() {
       <ThemeProvider theme={darkTheme}>
         <CssBaseline />
         <div className='App'>
-          <HomeBar
-            handleThemeChange={handleThemeChange}
-            darkState={darkState}
-          ></HomeBar>
-          <HomePage></HomePage>
+          <Router>
+            <HomeBar
+              handleThemeChange={handleThemeChange}
+              darkState={darkState}
+            ></HomeBar>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path='/expenses' element={<Expenses />} />
+              <Route path='/invoices' element={<Invoices />} />
+            </Routes>
+          </Router>
         </div>
       </ThemeProvider>
     </StyledEngineProvider>
