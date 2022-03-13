@@ -20,6 +20,9 @@ import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import { Link } from "react-router-dom";
 import { useTheme } from '@mui/styles';
+import ListItemLink from './ListItemLink';
+import { Home, Inbox, MonetizationOn } from '@mui/icons-material';
+import { List } from '@mui/material';
 
 const drawerWidth = 240;
 
@@ -109,7 +112,7 @@ function HomeBar(props) {
       <Drawer
         className={classes.drawer}
         variant='persistent'
-        anchor='left'
+        anchor='right'
         open={open}
         classes={{
           paper: classes.drawerPaper,
@@ -118,35 +121,19 @@ function HomeBar(props) {
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose} size="large">
             {theme.direction === 'ltr' ? (
-              <ChevronLeftIcon />
-            ) : (
               <ChevronRightIcon />
+            ) : (
+              <ChevronLeftIcon />
             )}
           </IconButton>
         </div>
         <Divider />
-        {['Page 1', 'Page 2', 'Etc...'].map((text, index) => (
-          <ListItem
-            button
-            key={text}
-          >
-            <ListItemIcon>
-              <StarIcon />
-            </ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-        <Divider />
-        {/* <List>
-          <ListItem button>
-            <ListItemIcon>
-              <InfoIcon />
-            </ListItemIcon>
-            <ListItemText primary='About' />
-          </ListItem>
-        </List> */}
-        <Link to="/invoices">Invoices</Link>
-        <Link to="/expenses">Expenses</Link>
+
+        <List aria-label="main nav">
+          <ListItemLink to='/' primary="Home" icon={<Home />} />
+          <ListItemLink to='/invoices' primary="Invoices" icon={<Inbox />} />
+          <ListItemLink to='/expenses' primary="Expenses" icon={<MonetizationOn />} />
+        </List>
       </Drawer>
     </div>
   );
