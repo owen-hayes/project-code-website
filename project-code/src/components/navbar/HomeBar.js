@@ -84,7 +84,9 @@ function HomeBar(props) {
         style={{ backgroundColor: theme.palette.barBg.main, color: 'primary' }}
       >
         <Toolbar className={classes.toolbar}>
-          <Link to="/"><img src='./logo-cropped.png' alt='Project Code logo' height='75 px' /></Link>
+          <Link to="/">
+            <img src='./logo-cropped.png' alt='Project Code logo' height='75 px' />
+          </Link>
           
           <div className={classes.rightGroup}>
             <ThemeToggle 
@@ -127,6 +129,7 @@ function HomeBar(props) {
             )}
           </IconButton>
         </div>
+        
         <Divider />
 
         <List aria-label="main nav">
