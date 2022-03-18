@@ -40,7 +40,7 @@ export default function ThemeToggle(props) {
                     id='toggle'
                     name='toggle'
                     type='checkbox'
-                    checked={props.darkState}
+                    defaultChecked={props.darkState}
                     onClick={props.handleThemeChange}
                 />
             </div>

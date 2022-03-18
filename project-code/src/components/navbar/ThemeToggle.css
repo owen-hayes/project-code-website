@@ -1,5 +1,5 @@
 :root {
-    --scale: 0.6;
+    --scale: 0.554;
     --black: #333333;
     --white: #f5f5f5;
     --background: var(--white);
@@ -19,7 +19,7 @@
 
 .toggle-wrapper {
     width: calc(130px * var(--scale));
-    margin-right: 10px;
+    margin-right: .8rem;
     display: block;
 }
 
