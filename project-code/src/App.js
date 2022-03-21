@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Expenses from './components/routes/expenses';
 import Invoices from './components/routes/invoices';
 import HomePage from './components/routes/HomePage';
+import Projects from './components/routes/Projects';
 
 // let lightTheme = createMuiTheme({
 //   typography: {
@@ -61,7 +62,7 @@ function App() {
             ></HomeBar>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path='/expenses' element={<Expenses />} />
+              <Route path='/projects' element={<Projects />} />
               <Route path='/invoices' element={<Invoices />} />
             </Routes>
           </Router>

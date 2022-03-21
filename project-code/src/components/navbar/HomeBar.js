@@ -22,6 +22,7 @@ import { Link } from "react-router-dom";
 import { useTheme } from '@mui/styles';
 import ListItemLink from './ListItemLink';
 import { Home, Inbox, MonetizationOn } from '@mui/icons-material';
+import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
 import { List } from '@mui/material';
 
 const drawerWidth = 240;
@@ -134,7 +135,7 @@ function HomeBar(props) {
 
         <List aria-label="main nav">
           <ListItemLink to='/' primary="Home" icon={<Home />} />
-          <ListItemLink to='/invoices' primary="Invoices" icon={<Inbox />} />
+          <ListItemLink to='/projects' primary="Projects" icon={<DeveloperBoardIcon />} />
           <ListItemLink to='/expenses' primary="Expenses" icon={<MonetizationOn />} />
         </List>
       </Drawer>
