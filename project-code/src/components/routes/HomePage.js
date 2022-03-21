@@ -87,19 +87,20 @@ export default function HomePage() {
           <Grid item xs={0} sm={0} md={6} lg={6} xl={6}></Grid>
           <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
             <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id
-              aliquam augue. Nunc eget tristique est. Curabitur maximus accumsan
-              euismod. Proin vitae est metus. Proin vel aliquet tortor, quis
-              luctus nisi. Proin elementum justo at eros volutpat suscipit.
-              Curabitur in laoreet erat. Sed sapien ipsum, commodo vel fringilla
-              et, auctor vel mi. Phasellus efficitur tristique velit, euismod
-              dictum diam venenatis ut. Maecenas sit amet massa pulvinar ipsum
-              ullamcorper hendrerit vel porttitor turpis. Morbi nec ligula eget
-              velit feugiat maximus. Sed ut est tellus. Vestibulum lacinia quam
-              nec condimentum gravida. Orci varius natoque penatibus et magnis
-              dis parturient montes, nascetur ridiculus mus. Suspendisse at ex
-              tortor. Aliquam sollicitudin urna ligula, sed congue dolor rhoncus
-              ac.
+            Project: Code is a programming and Computer Science based RSO which 
+            allows students to pursue their interests in programming topics with 
+            group based projects. By introductory group meetings which address 
+            popular topics in Computer Science and possible interesting project 
+            ideas, members will be introduced to each other and start to find common 
+            interest groups, with which they can develop project ideas on their own. 
+            Then each group, led by an upperclassmen mentor or experienced member in that 
+            field that will help to advise and give feedback to the group on their work 
+            and ideas for the project, will begin work on their project, giving weekly 
+            updates to the RSO on any findings and to see development. Overall, 
+            the niche of this RSO is to allow introductory and intermediate 
+            programmers to find a place where they can feel comfortable learning 
+            programming and exploring their interests, while meeting many people 
+            who share common interests.
             </Paper>
           </Grid>
         </Grid>
