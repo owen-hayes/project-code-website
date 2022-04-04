@@ -6,22 +6,16 @@ import Drawer from '@mui/material/Drawer';
 import makeStyles from '@mui/styles/makeStyles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Grid from '@mui/material/Grid';
 
 import Divider from '@mui/material/Divider';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import StarIcon from '@mui/icons-material/Star';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
 import { Link } from "react-router-dom";
 import { useTheme } from '@mui/styles';
 import ListItemLink from './ListItemLink';
-import { Home, Inbox, MonetizationOn } from '@mui/icons-material';
+import { Home, MonetizationOn } from '@mui/icons-material';
 import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
 import { List } from '@mui/material';
 

@@ -1,12 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper, Container, Box, Typography } from '@material-ui/core';
-import Image from 'material-ui-image';
-import {
-  createMuiTheme,
-  ThemeProvider,
-  responsiveFontSizes,
-} from '@material-ui/core/styles';
+import { Grid, Paper, Container, Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -43,15 +37,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Projects() {
   const classes = useStyles();
-  const [showTyping, setShowTyping] = useState(false);
-  const [showStatic, setShowStatic] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowTyping(true);
-    }, 1000);
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className={classes.root}>
@@ -60,7 +45,7 @@ export default function Projects() {
           <Grid item xs={12}></Grid>
           <Grid item xs={12} sm={12} md={6} lg={3} xl={3}>
             <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-              <img src='./Images/Covid-Data-Image(12-12-2020)(SAMPLE).png' height='310 px' />
+              <img src='./Images/Covid-Data-Image(12-12-2020)(SAMPLE).png' height='310 px' alt='Heatmap of Covid Infections in Illinois' />
               <Box fontWeight='fontWeightBold'>Visualization of Covid Data across Illinois Counties</Box>
               By Jimmy Berg, Gabe Grais, and Kai Loh
               <Box fontStyle = 'italic'> Published on 7/20/21</Box>

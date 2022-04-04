@@ -3,31 +3,12 @@ import React, { useState } from 'react';
 import './App.css';
 import HomeBar from './components/navbar/HomeBar';
 
-import { CssBaseline, createTheme, ThemeProvider, StyledEngineProvider, Switch } from '@mui/material';
+import { CssBaseline, createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material';
 import './font-import.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Expenses from './components/routes/expenses';
 import Invoices from './components/routes/invoices';
 import HomePage from './components/routes/HomePage';
 import Projects from './components/routes/Projects';
-
-// let lightTheme = createMuiTheme({
-//   typography: {
-//     fontFamily: '"Raleway", "Helvetica"',
-//   },
-//   palette: {
-//     primary: {
-//       main: '#fc4e47',
-//     },
-//     secondary: {
-//       main: '#ffa726',
-//     },
-//     test: {
-//       main: '#ff00c3'
-//     }
-//   },
-// });
-// lightTheme = responsiveFontSizes(lightTheme);
 
 function App() {
   const [darkState, setDarkState] = useState(false);
