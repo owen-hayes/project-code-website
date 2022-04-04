@@ -6,9 +6,9 @@ import HomeBar from './components/navbar/HomeBar';
 import { CssBaseline, createTheme, ThemeProvider, StyledEngineProvider } from '@mui/material';
 import './font-import.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Invoices from './components/routes/invoices';
 import HomePage from './components/routes/HomePage';
 import Projects from './components/routes/Projects';
+import Expenses from './components/routes/expenses';
 
 function App() {
   const [darkState, setDarkState] = useState(false);
@@ -44,7 +44,7 @@ function App() {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path='/projects' element={<Projects />} />
-              <Route path='/invoices' element={<Invoices />} />
+              <Route path='/expenses' element={<Expenses />} />
             </Routes>
           </Router>
         </div>
