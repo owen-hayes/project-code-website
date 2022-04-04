@@ -1,22 +1,18 @@
-import React from 'react';
+import React from 'react'
 
-import { 
-  ListItem,
-  ListItemText,
-  ListItemIcon
-} from "@mui/material";
-import { Link as RouterLink } from "react-router-dom";
+import { ListItem, ListItemText, ListItemIcon } from '@mui/material'
+import { Link as RouterLink } from 'react-router-dom'
 
 function ListItemLink(props) {
-  const { icon, primary, to } = props;
+  const { icon, primary, to } = props
 
   const renderLink = React.useMemo(
     () =>
       React.forwardRef(function Link(itemProps, ref) {
         return <RouterLink to={to} ref={ref} {...itemProps} role={undefined} />
       }),
-    [to],
-  );
+    [to]
+  )
 
   return (
     <li>
@@ -25,7 +21,7 @@ function ListItemLink(props) {
         <ListItemText primary={primary} />
       </ListItem>
     </li>
-  );
+  )
 }
 
-export default ListItemLink;
+export default ListItemLink
