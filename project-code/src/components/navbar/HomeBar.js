@@ -6,37 +6,33 @@ import Drawer from '@mui/material/Drawer';
 import makeStyles from '@mui/styles/makeStyles';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Grid from '@mui/material/Grid';
 
 import Divider from '@mui/material/Divider';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import StarIcon from '@mui/icons-material/Star';
-import ListItem from '@mui/material/ListItem';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/styles';
 import ListItemLink from './ListItemLink';
-import { Home, Inbox, MonetizationOn } from '@mui/icons-material';
+import { Home, MonetizationOn } from '@mui/icons-material';
 import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
 import { List } from '@mui/material';
+
+import PropTypes from 'prop-types';
 
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
+    flexShrink: 0
   },
   drawerPaper: {
-    width: drawerWidth,
+    width: drawerWidth
   },
   drawerHeader: {
     display: 'flex',
@@ -44,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end'
   },
   toolbar: {
     display: 'flex',
@@ -54,13 +50,13 @@ const useStyles = makeStyles((theme) => ({
   rightGroup: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   menuButton: {
-    marginLeft: '.5rem',
+    marginLeft: '.5rem'
   },
   themeToggle: {
-    marginRight: '.5rem',
+    marginRight: '.5rem'
   }
 }));
 
@@ -80,20 +76,15 @@ function HomeBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar
-        position='static'
-        style={{ backgroundColor: theme.palette.barBg.main, color: 'primary' }}
-      >
+      <AppBar position='static' style={{ backgroundColor: theme.palette.barBg.main, color: 'primary' }}>
         <Toolbar className={classes.toolbar}>
-          <Link to="/">
+          <Link to='/'>
             <img src='./logo-cropped.png' alt='Project Code logo' height='75 px' />
           </Link>
-          
+
           <div className={classes.rightGroup}>
-            <ThemeToggle 
-              darkState={props.darkState} 
-              handleThemeChange={props.handleThemeChange} />
-            
+            <ThemeToggle darkState={props.darkState} handleThemeChange={props.handleThemeChange} />
+
             <Button color='secondary' variant='contained'>
               Login
             </Button>
@@ -104,11 +95,11 @@ function HomeBar(props) {
               onClick={handleDrawerOpen}
               color='secondary'
               aria-label='menu'
-              size="large">
+              size='large'
+            >
               <MenuIcon />
             </IconButton>
           </div>
-
         </Toolbar>
       </AppBar>
       {/* TODO: Add gradient thing when <Drawer> is open */}
@@ -118,29 +109,30 @@ function HomeBar(props) {
         anchor='right'
         open={open}
         classes={{
-          paper: classes.drawerPaper,
+          paper: classes.drawerPaper
         }}
       >
         <div className={classes.drawerHeader}>
-          <IconButton onClick={handleDrawerClose} size="large">
-            {theme.direction === 'ltr' ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
+          <IconButton onClick={handleDrawerClose} size='large'>
+            {theme.direction === 'ltr' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </div>
-        
+
         <Divider />
 
-        <List aria-label="main nav">
-          <ListItemLink to='/' primary="Home" icon={<Home />} />
-          <ListItemLink to='/projects' primary="Projects" icon={<DeveloperBoardIcon />} />
-          <ListItemLink to='/expenses' primary="Expenses" icon={<MonetizationOn />} />
+        <List aria-label='main nav'>
+          <ListItemLink to='/' primary='Home' icon={<Home />} />
+          <ListItemLink to='/projects' primary='Projects' icon={<DeveloperBoardIcon />} />
+          <ListItemLink to='/expenses' primary='Expenses' icon={<MonetizationOn />} />
         </List>
       </Drawer>
     </div>
   );
 }
+
+HomeBar.propTypes = {
+  darkState: PropTypes.bool,
+  handleThemeChange: PropTypes.func
+};
 
 export default HomeBar;

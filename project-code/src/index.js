@@ -8,7 +8,7 @@ ReactDOM.render(
   <React.StrictMode>
     <App />
   </React.StrictMode>,
-    // asdf
+  // asdf
   document.getElementById('root')
 );
 
