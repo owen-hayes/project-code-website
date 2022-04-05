@@ -1,6 +1,6 @@
-import React from 'react'
-import { makeStyles } from '@material-ui/core/styles'
-import { Grid, Paper, Container, Box } from '@material-ui/core'
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import { Grid, Paper, Container, Box } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -33,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
   leftAlign: {
     textAlign: 'left'
   }
-}))
+}));
 
 export default function Projects() {
-  const classes = useStyles()
+  const classes = useStyles();
 
   return (
     <div className={classes.root}>
@@ -80,5 +80,5 @@ export default function Projects() {
         </Grid>
       </Container>
     </div>
-  )
+  );
 }

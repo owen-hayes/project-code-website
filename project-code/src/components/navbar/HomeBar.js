@@ -1,27 +1,27 @@
-import React from 'react'
-import ThemeToggle from './ThemeToggle'
+import React from 'react';
+import ThemeToggle from './ThemeToggle';
 
-import Button from '@mui/material/Button'
-import Drawer from '@mui/material/Drawer'
-import makeStyles from '@mui/styles/makeStyles'
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
-import MenuIcon from '@mui/icons-material/Menu'
+import Button from '@mui/material/Button';
+import Drawer from '@mui/material/Drawer';
+import makeStyles from '@mui/styles/makeStyles';
+import AppBar from '@mui/material/AppBar';
+import Toolbar from '@mui/material/Toolbar';
+import IconButton from '@mui/material/IconButton';
+import MenuIcon from '@mui/icons-material/Menu';
 
-import Divider from '@mui/material/Divider'
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft'
-import ChevronRightIcon from '@mui/icons-material/ChevronRight'
-import { Link } from 'react-router-dom'
-import { useTheme } from '@mui/styles'
-import ListItemLink from './ListItemLink'
-import { Home, MonetizationOn } from '@mui/icons-material'
-import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard'
-import { List } from '@mui/material'
+import Divider from '@mui/material/Divider';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
+import ChevronRightIcon from '@mui/icons-material/ChevronRight';
+import { Link } from 'react-router-dom';
+import { useTheme } from '@mui/styles';
+import ListItemLink from './ListItemLink';
+import { Home, MonetizationOn } from '@mui/icons-material';
+import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
+import { List } from '@mui/material';
 
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
-const drawerWidth = 240
+const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -58,21 +58,21 @@ const useStyles = makeStyles((theme) => ({
   themeToggle: {
     marginRight: '.5rem'
   }
-}))
+}));
 
 function HomeBar(props) {
-  const classes = useStyles()
-  const theme = useTheme()
+  const classes = useStyles();
+  const theme = useTheme();
 
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = React.useState(false);
 
   const handleDrawerOpen = () => {
-    setOpen(true)
-  }
+    setOpen(true);
+  };
 
   const handleDrawerClose = () => {
-    setOpen(false)
-  }
+    setOpen(false);
+  };
 
   return (
     <div className={classes.root}>
@@ -127,12 +127,12 @@ function HomeBar(props) {
         </List>
       </Drawer>
     </div>
-  )
+  );
 }
 
 HomeBar.propTypes = {
   darkState: PropTypes.bool,
   handleThemeChange: PropTypes.func
-}
+};
 
-export default HomeBar
+export default HomeBar;

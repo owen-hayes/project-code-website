@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react'
-import makeStyles from '@mui/styles/makeStyles'
-import { Grid, Paper, Container, Box, Typography } from '@mui/material'
-import ReactRotatingText from 'react-rotating-text'
+import React, { useState, useEffect } from 'react';
+import makeStyles from '@mui/styles/makeStyles';
+import { Grid, Paper, Container, Box, Typography } from '@mui/material';
+import ReactRotatingText from 'react-rotating-text';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,21 +34,21 @@ const useStyles = makeStyles((theme) => ({
   leftAlign: {
     textAlign: 'left'
   }
-}))
+}));
 
-let thingsToRotate = ['<h1>Welcome To <b>Project: Code!</b></h1>']
+let thingsToRotate = ['<h1>Welcome To <b>Project: Code!</b></h1>'];
 
 export default function HomePage() {
-  const classes = useStyles()
-  const [showTyping, setShowTyping] = useState(false)
-  const [showStatic, setShowStatic] = useState(false)
+  const classes = useStyles();
+  const [showTyping, setShowTyping] = useState(false);
+  const [showStatic, setShowStatic] = useState(false);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      setShowTyping(true)
-    }, 1000)
-    return () => clearTimeout(timer)
-  }, [])
+      setShowTyping(true);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
     <div className={classes.root}>
@@ -62,8 +62,8 @@ export default function HomePage() {
                   <ReactRotatingText
                     items={thingsToRotate}
                     onTypingEnd={() => {
-                      setShowStatic(true)
-                      setShowTyping(false)
+                      setShowStatic(true);
+                      setShowTyping(false);
                     }}
                     typingInterval={50}
                   />
@@ -96,5 +96,5 @@ export default function HomePage() {
         </Grid>
       </Container>
     </div>
-  )
+  );
 }
