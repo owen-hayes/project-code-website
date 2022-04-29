@@ -14,6 +14,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import HomePage from './components/routes/HomePage';
 import Projects from './components/routes/Projects';
 import Expenses from './components/routes/expenses';
+import Calendar from './components/routes/calendar';
 
 function App() {
   const [darkState, setDarkState] = useState(false);
@@ -50,6 +51,7 @@ function App() {
               <Route path='/' element={<HomePage />} />
               <Route path='/projects' element={<Projects />} />
               <Route path='/expenses' element={<Expenses />} />
+              <Route path='/calendar' element={<Calendar />} />
             </Routes>
           </Router>
         </div>
