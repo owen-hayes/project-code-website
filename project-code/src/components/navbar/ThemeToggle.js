@@ -28,12 +28,20 @@ function ThemeToggle(props) {
   return (
     <label className='toggle-wrapper' htmlFor='toggle'>
       <div className={`toggle ${props.darkState ? 'enabled' : 'disabled'}`}>
-        <span className='hidden'>{props.darkState ? 'Enable Light Mode' : 'Enable Dark Mode'}</span>
+        <span className='hidden'>
+          {props.darkState ? 'Enable Light Mode' : 'Enable Dark Mode'}
+        </span>
         <div className='icons'>
           <LightModeIcon />
           <DarkModeIcon />
         </div>
-        <input id='toggle' name='toggle' type='checkbox' defaultChecked={props.darkState} onClick={props.handleThemeChange} />
+        <input
+          id='toggle'
+          name='toggle'
+          type='checkbox'
+          defaultChecked={props.darkState}
+          onClick={props.handleThemeChange}
+        />
       </div>
     </label>
   );
@@ -41,7 +49,7 @@ function ThemeToggle(props) {
 
 ThemeToggle.propTypes = {
   darkState: PropTypes.bool,
-  handleThemeChange: PropTypes.func
+  handleThemeChange: PropTypes.func,
 };
 
 export default ThemeToggle;

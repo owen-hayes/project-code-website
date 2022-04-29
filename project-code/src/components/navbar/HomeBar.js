@@ -25,14 +25,14 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0
+    flexShrink: 0,
   },
   drawerPaper: {
-    width: drawerWidth
+    width: drawerWidth,
   },
   drawerHeader: {
     display: 'flex',
@@ -40,24 +40,24 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   rightGroup: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
   },
   menuButton: {
-    marginLeft: '.5rem'
+    marginLeft: '.5rem',
   },
   themeToggle: {
-    marginRight: '.5rem'
-  }
+    marginRight: '.5rem',
+  },
 }));
 
 function HomeBar(props) {
@@ -76,14 +76,24 @@ function HomeBar(props) {
 
   return (
     <div className={classes.root}>
-      <AppBar position='static' style={{ backgroundColor: theme.palette.barBg.main, color: 'primary' }}>
+      <AppBar
+        position='static'
+        style={{ backgroundColor: theme.palette.barBg.main, color: 'primary' }}
+      >
         <Toolbar className={classes.toolbar}>
           <Link to='/'>
-            <img src='./logo-cropped.png' alt='Project Code logo' height='75 px' />
+            <img
+              src='./logo-cropped.png'
+              alt='Project Code logo'
+              height='75 px'
+            />
           </Link>
 
           <div className={classes.rightGroup}>
-            <ThemeToggle darkState={props.darkState} handleThemeChange={props.handleThemeChange} />
+            <ThemeToggle
+              darkState={props.darkState}
+              handleThemeChange={props.handleThemeChange}
+            />
 
             <Button color='secondary' variant='contained'>
               Login
@@ -109,12 +119,16 @@ function HomeBar(props) {
         anchor='right'
         open={open}
         classes={{
-          paper: classes.drawerPaper
+          paper: classes.drawerPaper,
         }}
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose} size='large'>
-            {theme.direction === 'ltr' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
+            {theme.direction === 'ltr' ? (
+              <ChevronRightIcon />
+            ) : (
+              <ChevronLeftIcon />
+            )}
           </IconButton>
         </div>
 
@@ -122,8 +136,16 @@ function HomeBar(props) {
 
         <List aria-label='main nav'>
           <ListItemLink to='/' primary='Home' icon={<Home />} />
-          <ListItemLink to='/projects' primary='Projects' icon={<DeveloperBoardIcon />} />
-          <ListItemLink to='/expenses' primary='Expenses' icon={<MonetizationOn />} />
+          <ListItemLink
+            to='/projects'
+            primary='Projects'
+            icon={<DeveloperBoardIcon />}
+          />
+          <ListItemLink
+            to='/expenses'
+            primary='Expenses'
+            icon={<MonetizationOn />}
+          />
         </List>
       </Drawer>
     </div>
@@ -132,7 +154,7 @@ function HomeBar(props) {
 
 HomeBar.propTypes = {
   darkState: PropTypes.bool,
-  handleThemeChange: PropTypes.func
+  handleThemeChange: PropTypes.func,
 };
 
 export default HomeBar;

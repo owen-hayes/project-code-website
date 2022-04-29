@@ -28,7 +28,7 @@ function ListItemLink(props) {
 ListItemLink.propTypes = {
   icon: PropTypes.object,
   primary: PropTypes.string,
-  to: PropTypes.string
+  to: PropTypes.string,
 };
 
 export default ListItemLink;
