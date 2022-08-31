@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ThemeToggle from './ThemeToggle';
 
-import Button from '@mui/material/Button';
 import Drawer from '@mui/material/Drawer';
 import makeStyles from '@mui/styles/makeStyles';
 import AppBar from '@mui/material/AppBar';
@@ -14,12 +13,19 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 import { Link } from 'react-router-dom';
 import { useTheme } from '@mui/styles';
-import ListItemLink from './ListItemLink';
-import { Home, MonetizationOn } from '@mui/icons-material';
+import ListItemLink from './ListItemLink.js';
+import { Home } from '@mui/icons-material';
 import DeveloperBoardIcon from '@mui/icons-material/DeveloperBoard';
-import { List } from '@mui/material';
+import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
+// import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import UploadIcon from '@mui/icons-material/Upload';
+import { Alert, Grid, List, Snackbar, Typography, useMediaQuery } from '@mui/material';
 
 import PropTypes from 'prop-types';
+import { Box } from '@mui/system';
+import { UserContext } from '../context/user-context';
+import LoginButton from './LoginButton';
+import { getAuth } from 'firebase/auth';
 
 const drawerWidth = 240;
 
@@ -65,6 +71,9 @@ function HomeBar(props) {
   const theme = useTheme();
 
   const [open, setOpen] = React.useState(false);
+  const [snackbarOpen, setSnackbarOpen] = React.useState(false);
+
+  const userContext = useContext(UserContext);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -74,34 +83,63 @@ function HomeBar(props) {
     setOpen(false);
   };
 
+  const handleSnackbarOpen = () => {
+    setSnackbarOpen(true);
+  };
+
+  const handleSnackbarClose = () => {
+    setSnackbarOpen(false);
+  };
+
+  const aboveSm = useMediaQuery(theme.breakpoints.up('sm'));
+
   return (
-    <div className={classes.root}>
-      <AppBar position='static' style={{ backgroundColor: theme.palette.barBg.main, color: 'primary' }}>
+    // <div className={classes.root}>
+    <>
+      <AppBar position='sticky' color='secondary'>
         <Toolbar className={classes.toolbar}>
+          {/* Logo */}
           <Link to='/'>
-            <img src='./logo-cropped.png' alt='Project Code logo' height='75 px' />
+            <img src='./project-code.svg' alt='Project Code logo' height='60 px' style={{ marginTop: 10, marginBottom: 5 }} />
           </Link>
 
-          <div className={classes.rightGroup}>
-            <ThemeToggle darkState={props.darkState} handleThemeChange={props.handleThemeChange} />
-
-            <Button color='secondary' variant='contained'>
-              Login
-            </Button>
-
-            <IconButton
-              edge='start'
-              className={classes.menuButton}
-              onClick={handleDrawerOpen}
-              color='secondary'
-              aria-label='menu'
-              size='large'
-            >
+          {/* <Typography>{props.userRole ? props.userRole : 'nothing'}</Typography> */}
+          <Box className={classes.rightGroup}>
+            {/* When screen is above 'sm' breakpoint, keep theme toggle
+                and login button outside menu */}
+            {aboveSm && (
+              <>
+                <Box mr={2}>
+                  <ThemeToggle darkState={props.darkState} handleThemeChange={props.handleThemeChange} />
+                </Box>
+                <LoginButton user={props.user} handleSnackbarOpen={handleSnackbarOpen} setUserRole={props.setUserRole} />
+              </>
+            )}
+            <IconButton edge='start' className={classes.menuButton} onClick={handleDrawerOpen} aria-label='menu' size='large'>
               <MenuIcon />
             </IconButton>
-          </div>
+          </Box>
         </Toolbar>
       </AppBar>
+      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+        <Alert onClose={handleSnackbarClose} severity='success' sx={{ width: '100%' }}>
+          {userContext.user ? (
+            <>
+              <Typography>Successfully signed in.</Typography>
+              <Typography display='inline'>
+                Welcome,
+                <Typography fontWeight='bold' display='inline'>
+                  {' '}
+                  {getAuth().currentUser?.displayName}
+                </Typography>
+                !
+              </Typography>
+            </>
+          ) : (
+            <Typography>Successfully signed out.</Typography>
+          )}
+        </Alert>
+      </Snackbar>
       {/* TODO: Add gradient thing when <Drawer> is open */}
       <Drawer
         className={classes.drawer}
@@ -112,27 +150,45 @@ function HomeBar(props) {
           paper: classes.drawerPaper
         }}
       >
-        <div className={classes.drawerHeader}>
+        <Box className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose} size='large'>
             {theme.direction === 'ltr' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
-        </div>
+        </Box>
 
         <Divider />
 
-        <List aria-label='main nav'>
+        {/* When screen is below 'sm' breakpoint, put theme toggle and login button in menu */}
+        {!aboveSm && (
+          <Grid container pt={2} justifyContent='space-evenly'>
+            <Grid item>
+              <Box>
+                <ThemeToggle darkState={props.darkState} handleThemeChange={props.handleThemeChange} />
+              </Box>
+            </Grid>
+
+            <Grid item>
+              <LoginButton user={props.user} handleSnackbarOpen={handleSnackbarOpen} setUserRole={props.setUserRole} />
+            </Grid>
+          </Grid>
+        )}
+        <List aria-label='main nav' onClick={handleDrawerClose}>
           <ListItemLink to='/' primary='Home' icon={<Home />} />
-          <ListItemLink to='/projects' primary='Projects' icon={<DeveloperBoardIcon />} />
-          <ListItemLink to='/expenses' primary='Expenses' icon={<MonetizationOn />} />
+          <ListItemLink to='/calendar' primary='Calendar' icon={<CalendarMonthIcon />} />
+          <ListItemLink to='/projects' primary='Projects Gallery' icon={<DeveloperBoardIcon />} />
+          {props.userRole === 'admin' && <ListItemLink to='/uploadproject' primary='Upload Project' icon={<UploadIcon />} />}
         </List>
       </Drawer>
-    </div>
+    </>
   );
 }
 
 HomeBar.propTypes = {
+  user: PropTypes.object,
   darkState: PropTypes.bool,
-  handleThemeChange: PropTypes.func
+  handleThemeChange: PropTypes.func,
+  userRole: PropTypes.string,
+  setUserRole: PropTypes.func
 };
 
 export default HomeBar;

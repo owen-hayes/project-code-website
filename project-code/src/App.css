@@ -1,4 +1,4 @@
-.App {
+/* .App {
   height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
@@ -14,4 +14,34 @@
       align-items: flex-end;
       justify-content: center;
   }
+} */
+
+/* footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: red;
+  color: white;
+  text-align: center;
+} */
+
+:root {
+  --footer-height: 2.5rem;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: var(--footer-height);
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: var(--footer-height);
 }

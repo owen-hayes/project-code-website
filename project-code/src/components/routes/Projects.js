@@ -1,110 +1,187 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import { Grid, Paper, Container, Box } from '@material-ui/core';
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  paper: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    // background: 'warning',
-    color: 'primary',
-  },
-  paperContainer: {
-    backgroundImage: `url(${'main.jpeg'})`,
-  },
-  bigText: {
-    padding: theme.spacing(2),
-    textAlign: 'center',
-    background: 'transparent',
-    color: 'primary',
-  },
-  chakra: {
-    fontFamily: 'Chakra Petch',
-  },
-  mark: {
-    // backgroundColor: 'white',
-  },
-  react_text: {
-    display: 'none',
-  },
-  leftAlign: {
-    textAlign: 'left',
-  },
-}));
+import { CircularProgress, Container, Grid, Typography } from '@mui/material';
+import React, { useEffect, useState } from 'react';
+import { getDatabase, ref, onValue } from 'firebase/database';
+import ProjectCard from './ProjectCard';
+import { Box } from '@mui/system';
 
 export default function Projects() {
-  const classes = useStyles();
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    const db = getDatabase();
+    const projectsRef = ref(db, 'projects');
+    onValue(projectsRef, (snapshot) => {
+      const projectsData = snapshot.val();
+
+      // If there are no projects, set projects to empty array
+      if (!projectsData) {
+        setProjects([]);
+        return;
+      }
+
+      // Use minus sign to sort dates in descending order (newest to oldest)
+      let projectsDataKeys = Object.keys(projectsData);
+      projectsDataKeys.sort((a, b) => -sortDates(projectsData[a], projectsData[b]));
+
+      const newProjects = projectsDataKeys.map((key) => {
+        return { ...projectsData[key], id: key };
+      });
+
+      setProjects(newProjects);
+    });
+  }, []);
+
+  // // Get projects from database
+  // useEffect(() => {
+  //   const dbRef = ref(getDatabase());
+  //   get(child(dbRef, 'projects'))
+  //     .then((snapshot) => {
+  //       if (snapshot.exists()) {
+  //         // console.log(snapshot.val());
+  //         setProjects(snapshot.val());
+  //       } else {
+  //         console.log('No data available');
+  //       }
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  // }, []);
+
+  /**
+   * Sort dates from oldest to newest
+   * @param {*} a
+   * @param {*} b
+   * @returns TODO: finish
+   */
+  function sortDates(a, b) {
+    // Make undefined/empty published dates come before non-empty dates
+    if ((a.publishedDate === undefined || a.publishedDate === '') && (b.publishedDate === undefined || b.publishedDate === '')) {
+      return 0;
+    } else if (a.publishedDate === undefined || a.publishedDate === '') {
+      return -1;
+    } else if (b.publishedDate === undefined || b.publishedDate === '') {
+      return 1;
+    } else {
+      const aDate = new Date(a.publishedDate);
+      const bDate = new Date(b.publishedDate);
+      if (aDate < bDate) {
+        return 1;
+      } else if (aDate > bDate) {
+        return -1;
+      }
+    }
+    return 0;
+  }
 
   return (
-    <div className={classes.root}>
-      <Container maxWidth='xl'>
-        <Grid
-          justify='center'
-          container
-          spacing={8}
-          columnSpacing={{ xs: 1, sm: 1, md: 2, lg: 3, xl: 3 }}
-        >
-          <Grid item xs={12}></Grid>
-          <Grid item xs={12} sm={12} md={6} lg={3} xl={3}>
-            <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-              <img
-                src='./Images/Covid-Data-Image(12-12-2020)(SAMPLE).png'
-                height='310 px'
-                alt='Heatmap of Covid Infections in Illinois'
-              />
-              <Box fontWeight='fontWeightBold'>
+    <Container sx={{ pt: 2 }}>
+      <Typography variant='h3' fontWeight='bold' textAlign='center' mb={2}>
+        Projects Gallery
+      </Typography>
+      {projects.length === 0 && (
+        <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
+          <CircularProgress size={80} />
+        </Box>
+      )}
+      <Grid container spacing={2}>
+        {/* Map all projects to a grid item with a ProjectCard inside */}
+        {projects &&
+          Object.keys(projects)
+            .sort((a, b) => sortDates(projects[a], projects[b]))
+            .map((key, idx) => (
+              <Grid item xs={12} sm={6} md={4} key={idx}>
+                <ProjectCard {...projects[key]} />
+              </Grid>
+            ))}
+        {/* <Grid item xs={12} sm={6} md={4}>
+          <ProjectCard
+            title='Test Project'
+            // imageURL='asdf'
+            contributors={['asdf', 'l', 'skaljfs  oiw']}
+            // projectLink={'undefineasldd'}
+            description='asodm kdjfaoksdjfwaie ofaisjfl'
+          />
+        </Grid>
+        <Grid item xs={12} sm={6} md={4}>
+          <Card>
+            <CardMedia
+              component='img'
+              image='./Images/Covid-Data-Image(12-12-2020)(SAMPLE).png'
+              alt='Covid-19 hotspots around Illinois'
+            />
+            <CardContent>
+              <Typography variant='h4' fontWeight='bold'>
                 Visualization of Covid Data across Illinois Counties
-              </Box>
-              By Jimmy Berg, Gabe Grais, and Kai Loh
-              <Box fontStyle='italic'> Published on 7/20/21</Box>
-              <Box>
-                {' '}
+              </Typography>
+              <Typography variant='h6'>
+                Jimmy Berg, Gabe Grais, and Kai Loh
+              </Typography>
+              <Typography fontStyle='italic'>Led by Manager</Typography>
+              <Typography paragraph mt={2}>
                 A flask application that takes in a date and displays covid data
                 across Illinois Counties at that date. Clicking on a county
-                gives a graph of cofirmed covid cases over the year.
-              </Box>
-              <Box fontWeight='fontWeightBold'>
-                <a
-                  id='Data-Vis-Heroku-1'
-                  title='Go to Heroku Container'
-                  href='https://projectcode-coviddata.herokuapp.com/'
-                >
-                  {' '}
-                  Click here to view
-                </a>
-              </Box>
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={4} xl={4}>
-            <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-              Slot 2
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={4} xl={4}>
-            <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-              Slot 3
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={4} xl={4}>
-            <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-              Slot 4
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={4} xl={4}>
-            <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-              Slot 5
-            </Paper>
-          </Grid>
-          <Grid item xs={12} sm={12} md={6} lg={4} xl={4}>
-            <Paper className={`${classes.paper} ${classes.leftAlign}`}>
-              Slot 6
-            </Paper>
-          </Grid>
-        </Grid>
-      </Container>
-    </div>
+                gives a graph of confirmed covid cases over the year.
+              </Typography>
+              <Typography fontStyle='italic'>Published on 7/20/21</Typography>
+            </CardContent>
+            <CardActions>
+              <Button
+                // sx={{ width: '50%' }}
+                endIcon={<OpenInNewIcon />}
+                href='https://projectcode-coviddata.herokuapp.com/'
+                target='_blank'
+                variant='outlined'
+              >
+                View Project
+              </Button>
+              <Button
+                // sx={{ width: '50%' }}
+                endIcon={<GitHubIcon />}
+                href='https://projectcode-coviddata.herokuapp.com/'
+                target='_blank'
+                variant='outlined'
+              >
+                Source Code
+              </Button>
+            </CardActions>
+          </Card>
+        </Grid> */}
+        {/* <Grid item xs={12} md={4}>
+          <Paper
+            sx={{ p: 2 }}
+            // className={`${classes.paper} ${classes.leftAlign}`}
+            // sx={{ bgcolor: 'red' }}
+          >
+            <img
+              src='./Images/Covid-Data-Image(12-12-2020)(SAMPLE).png'
+              width='100%'
+              alt='Heatmap of Covid Infections in Illinois'
+            />
+            <Typography variant='h5' fontWeight='bold'>
+              Visualization of Covid Data across Illinois Counties
+            </Typography>
+            <Typography>Jimmy Berg, Gabe Grais, and Kai Loh</Typography>
+            <Typography fontStyle='italic'>Published on 7/20/21</Typography>
+            <Typography>
+              {' '}
+              A flask application that takes in a date and displays covid data
+              across Illinois Counties at that date. Clicking on a county gives
+              a graph of confirmed covid cases over the year.
+            </Typography>
+            <Box fontWeight='fontWeightBold'>
+              <a
+                id='Data-Vis-Heroku-1'
+                title='Go to Heroku Container'
+                href='https://projectcode-coviddata.herokuapp.com/'
+              >
+                {' '}
+                Click here to view
+              </a>
+            </Box>
+          </Paper>
+        </Grid> */}
+      </Grid>
+    </Container>
   );
 }
