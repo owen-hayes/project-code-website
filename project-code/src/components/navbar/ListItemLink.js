@@ -17,7 +17,7 @@ function ListItemLink(props) {
 
   return (
     <li>
-      <ListItem button component={renderLink}>
+      <ListItem button component={renderLink} disabled={props.disabled}>
         {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
         <ListItemText primary={primary} />
       </ListItem>
@@ -28,7 +28,8 @@ function ListItemLink(props) {
 ListItemLink.propTypes = {
   icon: PropTypes.object,
   primary: PropTypes.string,
-  to: PropTypes.string
+  to: PropTypes.string,
+  disabled: PropTypes.bool
 };
 
 export default ListItemLink;

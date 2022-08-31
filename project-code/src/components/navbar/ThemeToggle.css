@@ -19,7 +19,8 @@
 
 .toggle-wrapper {
     width: calc(130px * var(--scale));
-    margin-right: .8rem;
+    /* margin-right: .8rem; */
+    margin: auto;
     display: block;
 }
 
