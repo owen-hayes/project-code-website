@@ -14,7 +14,7 @@ export default function Footer() {
             justifyContent='center'
           >
             <Grid item>
-              <Typography>&copy; 2022 Project: Code UIUC</Typography>
+              <Typography>&copy; 2023 Project: Code UIUC</Typography>
             </Grid>
           </Grid>
         </Container>
