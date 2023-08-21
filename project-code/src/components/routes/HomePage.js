@@ -7,6 +7,7 @@ import { Link as RouterLink } from 'react-router-dom';
 import { FaDiscord } from 'react-icons/fa';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MailIcon from '@mui/icons-material/Mail';
+import AssignmentIcon from '@mui/icons-material/Assignment';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -124,8 +125,8 @@ export default function HomePage() {
       <Typography paragraph>
         If you're looking for an opportunity to lead a project you're passionate about, we would love to consider you for a Project Manager
         (PM) role! PM applications open near the end of each semester.{' '}
-        <Link href='https://forms.gle/ZBPtKi35JyNK9Gsa8' target='_blank'>
-          Apply here if you're interested!
+        <Link href='https://forms.gle/WsWA5c6P9b2FBHy6A' target='_blank'>
+          Apply here if you're interested in being a PM for Fall 2023!
         </Link>
       </Typography>
 
@@ -142,6 +143,20 @@ export default function HomePage() {
         us on Instagram!
       </Typography>
       <Grid container spacing={1} justifyContent='space-evenly' alignItems='center'>
+        <Grid item xs={12}>
+          <Button
+            variant='contained'
+            color='primary'
+            size='large'
+            startIcon={<AssignmentIcon />}
+            fullWidth
+            href='https://forms.gle/JLdA4oW1X7RDWn9N8'
+            target='_blank'
+            aria-label='Fall 2023 interest form'
+          >
+            Fall 2023 Interest Form
+          </Button>
+        </Grid>
         <Grid item xs={12} sm={6} md={4}>
           <Button
             variant='outlined'
@@ -156,13 +171,24 @@ export default function HomePage() {
           </Button>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <Button
+          {/* <Button
             variant='outlined'
             color='primary'
             size='large'
             startIcon={<MailIcon />}
             fullWidth
             href='https://tinyurl.com/ProjectCodeMailing'
+            target='_blank'
+          >
+            Join our mailing list
+          </Button> */}
+          <Button
+            variant='outlined'
+            color='primary'
+            size='large'
+            startIcon={<MailIcon />}
+            fullWidth
+            href='https://dashboard.mailerlite.com/forms/393887/92302177630946577/share'
             target='_blank'
           >
             Join our mailing list
