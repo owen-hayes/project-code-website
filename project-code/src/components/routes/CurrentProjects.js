@@ -1,52 +1,34 @@
 import { CircularProgress, Container, Grid, Typography } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { getDatabase, ref, onValue } from 'firebase/database';
-import ProjectCard from './ProjectCard';
 import { Box } from '@mui/system';
+import React, { useState } from 'react';
+import { currentProjectsData } from '../../CurrentProjectsData';
+import ProjectCard from './ProjectCard';
 
-export default function Projects() {
-  const [projects, setProjects] = useState([]);
+export default function CurrentProjects() {
+  const [projects] = useState(currentProjectsData);
 
-  useEffect(() => {
-    const db = getDatabase();
-    const projectsRef = ref(db, 'projects');
-    onValue(projectsRef, (snapshot) => {
-      const projectsData = snapshot.val();
-
-      // If there are no projects, set projects to empty array
-      if (!projectsData) {
-        setProjects([]);
-        return;
-      }
-
-      // Use minus sign to sort dates in descending order (newest to oldest)
-      let projectsDataKeys = Object.keys(projectsData);
-      projectsDataKeys.sort((a, b) => -sortDates(projectsData[a], projectsData[b]));
-
-      const newProjects = projectsDataKeys.map((key) => {
-        return { ...projectsData[key], id: key };
-      });
-
-      setProjects(newProjects);
-      console.log(JSON.stringify(newProjects))
-    });
-  }, []);
-
-  // // Get projects from database
   // useEffect(() => {
-  //   const dbRef = ref(getDatabase());
-  //   get(child(dbRef, 'projects'))
-  //     .then((snapshot) => {
-  //       if (snapshot.exists()) {
-  //         // console.log(snapshot.val());
-  //         setProjects(snapshot.val());
-  //       } else {
-  //         console.log('No data available');
-  //       }
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
+  //   const db = getDatabase();
+  //   const projectsRef = ref(db, 'projects');
+  //   onValue(projectsRef, (snapshot) => {
+  //     const projectsData = snapshot.val();
+
+  //     // If there are no projects, set projects to empty array
+  //     if (!projectsData) {
+  //       setProjects([]);
+  //       return;
+  //     }
+
+  //     // Use minus sign to sort dates in descending order (newest to oldest)
+  //     let projectsDataKeys = Object.keys(projectsData);
+  //     projectsDataKeys.sort((a, b) => -sortDates(projectsData[a], projectsData[b]));
+
+  //     const newProjects = projectsDataKeys.map((key) => {
+  //       return { ...projectsData[key], id: key };
   //     });
+
+  //     setProjects(newProjects);
+  //   });
   // }, []);
 
   /**
@@ -78,14 +60,14 @@ export default function Projects() {
   return (
     <Container sx={{ pt: 2 }}>
       <Typography variant='h3' fontWeight='bold' textAlign='center' mb={2}>
-        Published Projects
+        Fall 2023 Projects
       </Typography>
       {projects.length === 0 && (
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
           <CircularProgress size={80} />
         </Box>
       )}
-      <Grid container spacing={2}>
+      <Grid container spacing={2} alignItems='stretch'>
         {/* Map all projects to a grid item with a ProjectCard inside */}
         {projects &&
           Object.keys(projects)

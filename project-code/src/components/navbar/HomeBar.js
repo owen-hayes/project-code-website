@@ -175,8 +175,9 @@ function HomeBar(props) {
         <List aria-label='main nav' onClick={handleDrawerClose}>
           <ListItemLink to='/' primary='Home' icon={<Home />} />
           <ListItemLink to='/calendar' primary='Calendar' icon={<CalendarMonthIcon />} />
-          <ListItemLink to='/projects' primary='Projects Gallery' icon={<DeveloperBoardIcon />} />
-          {props.userRole === 'admin' && <ListItemLink to='/uploadproject' primary='Upload Project' icon={<UploadIcon />} />}
+          <ListItemLink to='/ongoing-projects' primary='Fall 2023 Projects' icon={<DeveloperBoardIcon />} />
+          <ListItemLink to='/published-projects' primary='Published Projects' icon={<DeveloperBoardIcon />} />
+          {props.userRole === 'admin' && <ListItemLink to='/upload-project' primary='Upload Project' icon={<UploadIcon />} />}
         </List>
       </Drawer>
     </>

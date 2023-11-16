@@ -10,35 +10,35 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
+    textAlign: 'center'
     // background: 'warning',
     // color: 'primary',
   },
   paperContainer: {
-    backgroundImage: `url(${'main.jpeg'})`,
+    backgroundImage: `url(${'main.jpeg'})`
   },
   bigText: {
     padding: theme.spacing(2),
     textAlign: 'center',
     background: 'transparent',
-    color: 'primary',
+    color: 'primary'
   },
   chakra: {
-    fontFamily: 'Chakra Petch',
+    fontFamily: 'Chakra Petch'
   },
   mark: {
     // backgroundColor: 'white',
   },
   react_text: {
-    display: 'none',
+    display: 'none'
   },
   leftAlign: {
-    textAlign: 'left',
-  },
+    textAlign: 'left'
+  }
 }));
 
 let thingsToRotate = ['<h1>Welcome To <b>Project: Code!</b></h1>            '];
@@ -60,11 +60,7 @@ export default function HomePage() {
     <Container maxWidth='md'>
       <Box textAlign='center' pt={3} pb={3}>
         {showTyping && (
-          <Typography
-            variant='h5'
-            className={classes.mark}
-            sx={{ fontFamily: 'Roboto Mono' }}
-          >
+          <Typography variant='h5' className={classes.mark} sx={{ fontFamily: 'Roboto Mono' }}>
             <ReactRotatingText
               items={thingsToRotate}
               onTypingEnd={() => {
@@ -107,20 +103,17 @@ export default function HomePage() {
         share common interests.
       </Typography> */}
       <Typography paragraph>
-        We are a registered student organization (RSO) at the University of
-        Illinois at Urbana-Champaign that allows programmers of all skill levels
-        to learn and explore with like-minded peers through group-based
-        programming projects!
+        We are a registered student organization (RSO) at the University of Illinois at Urbana-Champaign that allows programmers of all
+        skill levels to learn and explore with like-minded peers through group-based programming projects!
       </Typography>
 
       <Typography variant='h5' fontWeight='bold'>
         What kinds of projects can I work on?
       </Typography>
       <Typography paragraph>
-        Each semester, we offer a variety of projects touching on areas like web
-        development, data visualization, hardware engineering, machine learning,
-        game development, and more!{' '}
-        <Link to='/projects' component={RouterLink}>
+        Each semester, we offer a variety of projects touching on areas like web development, data visualization, hardware engineering,
+        machine learning, game development, and more!{' '}
+        <Link to='/published-projects' component={RouterLink}>
           Check out some of our published projects here.
         </Link>
       </Typography>
@@ -129,9 +122,8 @@ export default function HomePage() {
         Can I lead a project?
       </Typography>
       <Typography paragraph>
-        If you're looking for an opportunity to lead a project you're passionate
-        about, we would love to consider you for a Project Manager (PM) role! PM
-        applications open near the end of each semester.
+        If you're looking for an opportunity to lead a project you're passionate about, we would love to consider you for a Project Manager
+        (PM) role! PM applications open near the end of each semester.
         {/* <Link href='https://forms.gle/WsWA5c6P9b2FBHy6A' target='_blank'>
           Apply here if you're interested in being a PM for Fall 2023!
         </Link> */}
@@ -145,18 +137,11 @@ export default function HomePage() {
         <Link to='calendar' component={RouterLink}>
           Take a look at out our calendar
         </Link>{' '}
-        to view our upcoming general meetings and workshops. We begin to
-        solidify project groups within the first few weeks of the semester, so
-        come to as many of our general meetings as possible. Also, be sure to
-        join our Discord, sign up for our mailing list, and follow us on
-        Instagram!
+        to view our upcoming general meetings and workshops. We begin to solidify project groups within the first few weeks of the semester,
+        so come to as many of our general meetings as possible. Also, be sure to join our Discord, sign up for our mailing list, and follow
+        us on Instagram!
       </Typography>
-      <Grid
-        container
-        spacing={1}
-        justifyContent='space-evenly'
-        alignItems='center'
-      >
+      <Grid container spacing={1} justifyContent='space-evenly' alignItems='center'>
         {/* <Grid item xs={12}>
           <Button
             variant='contained'
