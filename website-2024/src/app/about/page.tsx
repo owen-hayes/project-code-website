@@ -10,7 +10,6 @@ import {
   Stack,
   Typography,
 } from "@mui/joy";
-import ProductCard from "./_components/ProductCard";
 import BioCard from "./_components/BioCard";
 import { EXEC } from "./_people/exec";
 import { PROJECT_MANAGERS } from "./_people/project-managers";

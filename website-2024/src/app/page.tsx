@@ -65,8 +65,9 @@ export default function Home() {
             <Typography level="body-lg">
               Explore areas of computer science like{" "}
               <Typography fontWeight="bold">
-                web development, data science, machine learning (ML), and
-                artificial intelligence (AI){" "}
+                app / web development, data science, machine learning,
+                virtual reality / augmented reality, and game
+                development{" "}
               </Typography>
               with groups of like-minded peers at UIUC! Join us to work with a
               Project Manager (PM) and a group of 5-10 students and spend the
