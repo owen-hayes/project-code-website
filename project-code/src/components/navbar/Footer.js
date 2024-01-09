@@ -9,7 +9,6 @@ export default function Footer() {
           <Divider sx={{ marginBottom: '0.5rem' }} />
           <Grid
             container
-            // sx={{ backgroundColor: 'red' }}
             alignItems='center'
             justifyContent='center'
           >

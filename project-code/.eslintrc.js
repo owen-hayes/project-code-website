@@ -7,11 +7,11 @@ module.exports = {
       jsx: true
     }
   },
-  // settings: {
-  //   react: {
-  //     version: 'detect'
-  //   }
-  // },
+  settings: {
+    react: {
+      version: 'detect'
+    }
+  },
   env: {
     jest: true,
     browser: true,

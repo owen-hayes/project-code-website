@@ -4,10 +4,11 @@
   "private": true,
   "dependencies": {
     "@date-io/date-fns": "^2.13.2",
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
     "@hookform/resolvers": "^2.8.8",
     "@mui/icons-material": "^5.6.2",
+    "@mui/joy": "^5.0.0-beta.20",
     "@mui/material": "^5.4.4",
     "@mui/styles": "^5.4.4",
     "@mui/x-date-pickers": "^5.0.0-alpha.2",
@@ -33,7 +34,7 @@
     "yup": "^0.32.11"
   },
   "scripts": {
-    "start": "GENERATE_SOURCEMAP=false react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -42,25 +43,10 @@
     "prepare": "cd .. && husky install project-code/.husky",
     "deploy": "npm run build && firebase deploy"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run lint && npm run format"
-    }
-  },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
-  },
-  "lint-staged": {
-    "*.+(js|jsx)": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.+(json|css|md)": [
-      "prettier --write",
-      "git add"
     ]
   },
   "browserslist": {

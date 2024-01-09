@@ -28,6 +28,7 @@ export default function Projects() {
       });
 
       setProjects(newProjects);
+      console.log(JSON.stringify(newProjects))
     });
   }, []);
 
@@ -77,7 +78,7 @@ export default function Projects() {
   return (
     <Container sx={{ pt: 2 }}>
       <Typography variant='h3' fontWeight='bold' textAlign='center' mb={2}>
-        Projects Gallery
+        Published Projects
       </Typography>
       {projects.length === 0 && (
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>

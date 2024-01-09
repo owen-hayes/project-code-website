@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ListItem, ListItemText, ListItemIcon } from '@mui/material';
-import { Link as RouterLink } from 'react-router-dom';
+import { ListItemButton, ListItemIcon, ListItemText } from '@mui/material';
 import PropTypes from 'prop-types';
+import { Link as RouterLink } from 'react-router-dom';
 
 function ListItemLink(props) {
   const { icon, primary, to } = props;
@@ -17,10 +17,10 @@ function ListItemLink(props) {
 
   return (
     <li>
-      <ListItem button component={renderLink} disabled={props.disabled}>
+      <ListItemButton component={renderLink} disabled={props.disabled}>
         {icon ? <ListItemIcon>{icon}</ListItemIcon> : null}
         <ListItemText primary={primary} />
-      </ListItem>
+      </ListItemButton>
     </li>
   );
 }

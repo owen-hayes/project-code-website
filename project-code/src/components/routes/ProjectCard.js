@@ -7,7 +7,7 @@ import {
   Skeleton,
   // Container,
   // Skeleton,
-  Typography
+  Typography,
 } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
@@ -54,11 +54,24 @@ function ProjectImage(props) {
   //   srcList: 'https://www.example.com/foo.jpg',
   //   fallback: <Skeleton variant='rectangular' width='100%' height={200} />,
   // });
-  return <Img src={props.imageURL} width='100%' loader={<Skeleton variant='rectangular' animation='wave' width='100%' height={200} />} />;
+  return (
+    <Img
+      src={props.imageURL}
+      width='100%'
+      loader={
+        <Skeleton
+          variant='rectangular'
+          animation='wave'
+          width='100%'
+          height={200}
+        />
+      }
+    />
+  );
 }
 
 ProjectImage.propTypes = {
-  imageURL: PropTypes.string
+  imageURL: PropTypes.string,
 };
 
 function ProjectCard(props) {
@@ -114,17 +127,18 @@ function ProjectCard(props) {
       {/* // (props.imageName && imageURL) || !props.imageName ? ( */}
       <Card
         sx={{
-          display: props.localImage || (lookedForImage && (imageLoaded || !hasImage)) ? 'block' : 'none'
+          display:
+            props.localImage || (lookedForImage && (imageLoaded || !hasImage))
+              ? 'block'
+              : 'none',
+          height: '100%'
         }}
       >
         {/* {imageLoaded && ( */}
         <CardMedia
           component='img'
           src={imageURL}
-          onLoad={() => {
-            console.log('the iamge loaded');
-            setImageLoaded(true);
-          }}
+          onLoad={() => setImageLoaded(true)}
           sx={{ display: imageLoaded ? 'block' : 'none' }}
         >
           {/* <img src={imageURL} width='100%' /> */}
@@ -147,9 +161,12 @@ function ProjectCard(props) {
             {props.publishedDate ? (
               <>
                 Published on{' '}
-                {new Date(props.publishedDate).toLocaleString(navigator.language, {
-                  dateStyle: 'short'
-                })}{' '}
+                {new Date(props.publishedDate).toLocaleString(
+                  navigator.language,
+                  {
+                    dateStyle: 'short',
+                  }
+                )}{' '}
               </>
             ) : (
               'Ongoing'
@@ -158,12 +175,24 @@ function ProjectCard(props) {
         </CardContent>
         <CardActions>
           {props.projectLink && (
-            <Button sx={{ width: '100%' }} endIcon={<OpenInNewIcon />} href={props.projectLink} target='_blank' variant='outlined'>
+            <Button
+              sx={{ width: '100%' }}
+              endIcon={<OpenInNewIcon />}
+              href={props.projectLink}
+              target='_blank'
+              variant='outlined'
+            >
               View Project
             </Button>
           )}
           {props.sourceCodeLink && (
-            <Button sx={{ width: '100%' }} endIcon={<GitHubIcon />} href={props.sourceCodeLink} target='_blank' variant='outlined'>
+            <Button
+              sx={{ width: '100%' }}
+              endIcon={<GitHubIcon />}
+              href={props.sourceCodeLink}
+              target='_blank'
+              variant='outlined'
+            >
               Source Code
             </Button>
           )}
@@ -173,7 +202,11 @@ function ProjectCard(props) {
       {/* <> */}
       <ProjectCardSkeleton
         imageURL={imageURL}
-        display={props.localImage || (lookedForImage && (imageLoaded || !hasImage)) ? 'none' : 'block'}
+        display={
+          props.localImage || (lookedForImage && (imageLoaded || !hasImage))
+            ? 'none'
+            : 'block'
+        }
       />
       {/* {imageURL && (
         <img
@@ -201,7 +234,7 @@ ProjectCard.propTypes = {
   manager: PropTypes.string,
   projectLink: PropTypes.string,
   publishedDate: PropTypes.string,
-  sourceCodeLink: PropTypes.string
+  sourceCodeLink: PropTypes.string,
 };
 
 export default ProjectCard;

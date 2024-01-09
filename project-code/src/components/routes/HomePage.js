@@ -1,44 +1,44 @@
 /* eslint-disable react/no-unescaped-entities */
-import React, { useState, useEffect } from 'react';
-import makeStyles from '@mui/styles/makeStyles';
-import { Grid, Container, Box, Typography, Link, Button } from '@mui/material';
-import ReactRotatingText from 'react-rotating-text';
-import { Link as RouterLink } from 'react-router-dom';
-import { FaDiscord } from 'react-icons/fa';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import MailIcon from '@mui/icons-material/Mail';
+import { Box, Button, Container, Grid, Link, Typography } from '@mui/material';
+import makeStyles from '@mui/styles/makeStyles';
+import React, { useEffect, useState } from 'react';
+import { FaDiscord } from 'react-icons/fa';
+import ReactRotatingText from 'react-rotating-text';
+import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1
+    flexGrow: 1,
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center'
+    textAlign: 'center',
     // background: 'warning',
     // color: 'primary',
   },
   paperContainer: {
-    backgroundImage: `url(${'main.jpeg'})`
+    backgroundImage: `url(${'main.jpeg'})`,
   },
   bigText: {
     padding: theme.spacing(2),
     textAlign: 'center',
     background: 'transparent',
-    color: 'primary'
+    color: 'primary',
   },
   chakra: {
-    fontFamily: 'Chakra Petch'
+    fontFamily: 'Chakra Petch',
   },
   mark: {
     // backgroundColor: 'white',
   },
   react_text: {
-    display: 'none'
+    display: 'none',
   },
   leftAlign: {
-    textAlign: 'left'
-  }
+    textAlign: 'left',
+  },
 }));
 
 let thingsToRotate = ['<h1>Welcome To <b>Project: Code!</b></h1>            '];
@@ -60,7 +60,7 @@ export default function HomePage() {
     <Container maxWidth='md'>
       <Box textAlign='center' pt={3} pb={3}>
         {showTyping && (
-          <Typography variant='h5' className={classes.mark} sx={{ fontFamily: 'Roboto Mono' }}>
+          <Typography variant='h5' className={classes.mark}>
             <ReactRotatingText
               items={thingsToRotate}
               onTypingEnd={() => {
@@ -79,13 +79,13 @@ export default function HomePage() {
           </Typography>
         )}
       </Box>
-      <Typography variant='h5' fontWeight='bold' noWrap>
+      {/* <Typography variant='h5' fontWeight='bold' noWrap>
         What is{' '}
         <Box display='inline' fontStyle='italic'>
           Project: Code
         </Box>
         ?
-      </Typography>
+      </Typography> */}
       {/* <Typography paragraph>
         We are a programming and Computer Science based RSO which allows
         students to pursue their interests in programming topics with group
@@ -102,18 +102,42 @@ export default function HomePage() {
         programming and exploring their interests, while meeting many people who
         share common interests.
       </Typography> */}
-      <Typography paragraph>
-        We are a registered student organization (RSO) at the University of Illinois at Urbana-Champaign that allows programmers of all
-        skill levels to learn and explore with like-minded peers through group-based programming projects!
+      {/* <Typography paragraph fontWeight='semibold'>
+        We are a registered student organization (RSO) at the University of
+        Illinois at Urbana-Champaign that allows programmers of all skill levels
+        to learn and explore with like-minded peers through group-based
+        programming projects!
+      </Typography> */}
+
+      <Typography paragraph fontWeight={600}>
+        Come explore areas of computer science like web development, data
+        science, machine learning (ML), and artificial intelligence (AI) with
+        groups of like-minded peers at UIUC! With the guidance and assistance of
+        a Project Manager (PM) and a group of 5-10 students, you will spend the
+        semester or year working on a project centered around your area of
+        interest (web dev, data science, etc.).
       </Typography>
+      <Button
+            variant='contained'
+            color='primary'
+            size='large'
+            startIcon={<FaDiscord />}
+            fullWidth
+            href='https://discord.gg/yCPDb8YRRp'
+            target='_blank'
+          >
+            Join our Discord
+          </Button>
+
 
       <Typography variant='h5' fontWeight='bold'>
         What kinds of projects can I work on?
       </Typography>
       <Typography paragraph>
-        Each semester, we offer a variety of projects touching on areas like web development, data visualization, hardware engineering,
-        machine learning, game development, and more!{' '}
-        <Link to='/projects' component={RouterLink}>
+        Each semester, we offer a variety of projects touching on areas like web
+        development, data visualization, hardware engineering, machine learning,
+        game development, and more!{' '}
+        <Link to='/published-projects' component={RouterLink}>
           Check out some of our published projects here.
         </Link>
       </Typography>
@@ -122,11 +146,12 @@ export default function HomePage() {
         Can I lead a project?
       </Typography>
       <Typography paragraph>
-        If you're looking for an opportunity to lead a project you're passionate about, we would love to consider you for a Project Manager
-        (PM) role! PM applications open near the end of each semester.{' '}
-        <Link href='https://forms.gle/ZBPtKi35JyNK9Gsa8' target='_blank'>
-          Apply here if you're interested!
-        </Link>
+        If you're looking for an opportunity to lead a project you're passionate
+        about, we would love to consider you for a Project Manager (PM) role! PM
+        applications open near the end of each semester.
+        {/* <Link href='https://forms.gle/WsWA5c6P9b2FBHy6A' target='_blank'>
+          Apply here if you're interested in being a PM for Fall 2023!
+        </Link> */}
       </Typography>
 
       <Typography variant='h5' fontWeight='bold'>
@@ -137,11 +162,32 @@ export default function HomePage() {
         <Link to='calendar' component={RouterLink}>
           Take a look at out our calendar
         </Link>{' '}
-        to view our upcoming general meetings and workshops. We begin to solidify project groups within the first few weeks of the semester,
-        so come to as many of our general meetings as possible. Also, be sure to join our Discord, sign up for our mailing list, and follow
-        us on Instagram!
+        to view our upcoming general meetings and workshops. We begin to
+        solidify project groups within the first few weeks of the semester, so
+        come to as many of our general meetings as possible. Also, be sure to
+        join our Discord, sign up for our mailing list, and follow us on
+        Instagram!
       </Typography>
-      <Grid container spacing={1} justifyContent='space-evenly' alignItems='center'>
+      <Grid
+        container
+        spacing={1}
+        justifyContent='space-evenly'
+        alignItems='center'
+      >
+        {/* <Grid item xs={12}>
+          <Button
+            variant='contained'
+            color='primary'
+            size='large'
+            startIcon={<AssignmentIcon />}
+            fullWidth
+            href='https://forms.gle/JLdA4oW1X7RDWn9N8'
+            target='_blank'
+            aria-label='Fall 2023 interest form'
+          >
+            Fall 2023 Interest Form
+          </Button>
+        </Grid> */}
         <Grid item xs={12} sm={6} md={4}>
           <Button
             variant='outlined'
@@ -156,13 +202,25 @@ export default function HomePage() {
           </Button>
         </Grid>
         <Grid item xs={12} sm={6} md={4}>
-          <Button
+          {/* <Button
             variant='outlined'
             color='primary'
             size='large'
             startIcon={<MailIcon />}
             fullWidth
             href='https://tinyurl.com/ProjectCodeMailing'
+            target='_blank'
+          >
+            Join our mailing list
+          </Button> */}
+          <Button
+            variant='outlined'
+            color='primary'
+            size='large'
+            startIcon={<MailIcon />}
+            fullWidth
+            // href='https://dashboard.mailerlite.com/forms/393887/92302177630946577/share'
+            href='https://forms.gle/x7JLMNzbmNFLRipAA'
             target='_blank'
           >
             Join our mailing list
@@ -180,7 +238,7 @@ export default function HomePage() {
             target='_blank'
             aria-label='Follow us on Instagram'
           >
-            Follow us on Instagram
+            Follow our Instagram
           </Button>
         </Grid>
       </Grid>
