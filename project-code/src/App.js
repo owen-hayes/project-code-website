@@ -1,12 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {
-  Container,
-  createTheme,
-  CssBaseline,
-  responsiveFontSizes,
-  StyledEngineProvider,
-  ThemeProvider,
-} from '@mui/material';
+import { Container, createTheme, CssBaseline, responsiveFontSizes, StyledEngineProvider, ThemeProvider } from '@mui/material';
 import { getAuth } from 'firebase/auth';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { UserContext } from './components/context/user-context';
@@ -25,10 +18,7 @@ import CurrentProjects from './components/routes/CurrentProjects';
 
 function App() {
   // State for managing dark mode
-  const [darkState, setDarkState] = useState(
-    window.matchMedia &&
-      window.matchMedia('(prefers-color-scheme: dark)').matches
-  );
+  const [darkState, setDarkState] = useState(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
 
   // Define theme colors based on dark mode state
   const mainPrimaryColor = darkState ? '#fc4e47' : '#fc4e47';
@@ -40,7 +30,7 @@ function App() {
     typography: {
       fontFamily: '"Source Sans 3", "Raleway", "Helvetica"',
       h1: {
-        fontWeight: 'bold',
+        fontWeight: 'bold'
       },
       fontSize: 18
     },
@@ -48,10 +38,10 @@ function App() {
       mode: darkState ? 'dark' : 'light',
       primary: { main: mainPrimaryColor },
       secondary: { main: mainSecondaryColor },
-      barBg: { main: mainBarColor, black: '#333333', white: '#f5f5f5' },
+      barBg: { main: mainBarColor, black: '#333333', white: '#f5f5f5' }
       // background: { default: darkState?'#1e1e1e': '#ffffff' },
       // text: { secondary: '#121212' },
-    },
+    }
   });
 
   // Listen for changes in the preferred color scheme
@@ -148,20 +138,11 @@ function App() {
                     <Route path='/oldprojects' element={<OldProjects />} />
                     <Route path='/calendar' element={<Calendar />} />
                     <Route path='/published-projects' element={<Projects />} />
-                    <Route
-                      path='/ongoing-projects'
-                      element={<CurrentProjects />}
-                    />
+                    <Route path='/ongoing-projects' element={<CurrentProjects />} />
                     <Route path='/attendance' element={<Attendance />} />
                     <Route
                       path='/upload-project'
-                      element={
-                        <RequireAuth
-                          userRole={userRole}
-                          requiredRole='admin'
-                          element={<UploadProject />}
-                        />
-                      }
+                      element={<RequireAuth userRole={userRole} requiredRole='admin' element={<UploadProject />} />}
                     />
                   </Routes>
                 </Container>

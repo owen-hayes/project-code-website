@@ -28,7 +28,7 @@ export default function Projects() {
       });
 
       setProjects(newProjects);
-      console.log(JSON.stringify(newProjects))
+      console.log(JSON.stringify(newProjects));
     });
   }, []);
 

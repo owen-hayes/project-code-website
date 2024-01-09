@@ -18,14 +18,7 @@ import { useTheme } from '@mui/styles';
 import { Link } from 'react-router-dom';
 import ListItemLink from './ListItemLink.js';
 import UploadIcon from '@mui/icons-material/Upload';
-import {
-  Alert,
-  Grid,
-  List,
-  Snackbar,
-  Typography,
-  useMediaQuery,
-} from '@mui/material';
+import { Alert, Grid, List, Snackbar, Typography, useMediaQuery } from '@mui/material';
 
 import { Box } from '@mui/system';
 import { getAuth } from 'firebase/auth';
@@ -37,14 +30,14 @@ const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   drawer: {
     width: drawerWidth,
-    flexShrink: 0,
+    flexShrink: 0
   },
   drawerPaper: {
-    width: drawerWidth,
+    width: drawerWidth
   },
   drawerHeader: {
     display: 'flex',
@@ -52,24 +45,24 @@ const useStyles = makeStyles((theme) => ({
     padding: theme.spacing(0, 1),
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
-    justifyContent: 'flex-end',
+    justifyContent: 'flex-end'
   },
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   rightGroup: {
     display: 'flex',
     flexDirection: 'row',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   menuButton: {
-    marginLeft: '.5rem',
+    marginLeft: '.5rem'
   },
   themeToggle: {
-    marginRight: '.5rem',
-  },
+    marginRight: '.5rem'
+  }
 }));
 
 function HomeBar(props) {
@@ -106,12 +99,7 @@ function HomeBar(props) {
         <Toolbar className={classes.toolbar}>
           {/* Logo */}
           <Link to='/' style={{ WebkitUserSelect: 'none' }}>
-            <img
-              src='./project-code.svg'
-              alt='Project Code logo'
-              height='60 px'
-              style={{ marginTop: 10, marginBottom: 5 }}
-            />
+            <img src='./project-code.svg' alt='Project Code logo' height='60 px' style={{ marginTop: 10, marginBottom: 5 }} />
           </Link>
 
           <Box className={classes.rightGroup}>
@@ -120,27 +108,14 @@ function HomeBar(props) {
             {screenLargerThanSm && (
               <>
                 <Box mr={2}>
-                  <ThemeToggle
-                    darkState={props.darkState}
-                    handleThemeChange={props.handleThemeChange}
-                  />
+                  <ThemeToggle darkState={props.darkState} handleThemeChange={props.handleThemeChange} />
                 </Box>
-                <LoginButton
-                  user={props.user}
-                  handleSnackbarOpen={handleSnackbarOpen}
-                  setUserRole={props.setUserRole}
-                />
+                <LoginButton user={props.user} handleSnackbarOpen={handleSnackbarOpen} setUserRole={props.setUserRole} />
               </>
             )}
 
             {/* Hamburger button in top bar */}
-            <IconButton
-              edge='start'
-              className={classes.menuButton}
-              onClick={handleDrawerOpen}
-              aria-label='menu'
-              size='large'
-            >
+            <IconButton edge='start' className={classes.menuButton} onClick={handleDrawerOpen} aria-label='menu' size='large'>
               <MenuIcon />
             </IconButton>
           </Box>
@@ -148,16 +123,8 @@ function HomeBar(props) {
       </AppBar>
 
       {/* Snack bar for sign in/out messages */}
-      <Snackbar
-        open={snackbarOpen}
-        autoHideDuration={6000}
-        onClose={handleSnackbarClose}
-      >
-        <Alert
-          onClose={handleSnackbarClose}
-          severity='success'
-          sx={{ width: '100%' }}
-        >
+      <Snackbar open={snackbarOpen} autoHideDuration={6000} onClose={handleSnackbarClose}>
+        <Alert onClose={handleSnackbarClose} severity='success' sx={{ width: '100%' }}>
           {userContext.user ? (
             <>
               <Typography>Successfully signed in.</Typography>
@@ -178,20 +145,10 @@ function HomeBar(props) {
 
       {/* TODO: Add gradient thing when <Drawer> is open */}
       {/* Side bar  */}
-      <Drawer
-        className={classes.drawer}
-        variant='persistent'
-        anchor='right'
-        open={open}
-        classes={{ paper: classes.drawerPaper }}
-      >
+      <Drawer className={classes.drawer} variant='persistent' anchor='right' open={open} classes={{ paper: classes.drawerPaper }}>
         <Box className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose} size='large'>
-            {theme.direction === 'ltr' ? (
-              <ChevronRightIcon />
-            ) : (
-              <ChevronLeftIcon />
-            )}
+            {theme.direction === 'ltr' ? <ChevronRightIcon /> : <ChevronLeftIcon />}
           </IconButton>
         </Box>
 
@@ -203,20 +160,13 @@ function HomeBar(props) {
             {/* Dark mode toggle */}
             <Grid item>
               <Box>
-                <ThemeToggle
-                  darkState={props.darkState}
-                  handleThemeChange={props.handleThemeChange}
-                />
+                <ThemeToggle darkState={props.darkState} handleThemeChange={props.handleThemeChange} />
               </Box>
             </Grid>
 
             {/* Login button */}
             <Grid item>
-              <LoginButton
-                user={props.user}
-                handleSnackbarOpen={handleSnackbarOpen}
-                setUserRole={props.setUserRole}
-              />
+              <LoginButton user={props.user} handleSnackbarOpen={handleSnackbarOpen} setUserRole={props.setUserRole} />
             </Grid>
           </Grid>
         )}
@@ -225,32 +175,14 @@ function HomeBar(props) {
         <List aria-label='main nav' onClick={handleDrawerClose}>
           <ListItemLink to='/' primary='Home' icon={<Home />} />
 
-          <ListItemLink
-            to='/calendar'
-            primary='Calendar'
-            icon={<CalendarMonthIcon />}
-          />
+          <ListItemLink to='/calendar' primary='Calendar' icon={<CalendarMonthIcon />} />
 
-          <ListItemLink
-            to='/ongoing-projects'
-            primary='Fall 2023 Projects'
-            icon={<DeveloperBoardIcon />}
-          />
+          <ListItemLink to='/ongoing-projects' primary='Fall 2023 Projects' icon={<DeveloperBoardIcon />} />
 
-          <ListItemLink
-            to='/published-projects'
-            primary='Published Projects'
-            icon={<DeveloperBoardIcon />}
-          />
+          <ListItemLink to='/published-projects' primary='Published Projects' icon={<DeveloperBoardIcon />} />
 
           {/* Only show upload project option for admins */}
-          {props.userRole === 'admin' && (
-            <ListItemLink
-              to='/upload-project'
-              primary='Upload Project'
-              icon={<UploadIcon />}
-            />
-          )}
+          {props.userRole === 'admin' && <ListItemLink to='/upload-project' primary='Upload Project' icon={<UploadIcon />} />}
         </List>
       </Drawer>
     </>
@@ -262,7 +194,7 @@ HomeBar.propTypes = {
   darkState: PropTypes.bool,
   handleThemeChange: PropTypes.func,
   userRole: PropTypes.string,
-  setUserRole: PropTypes.func,
+  setUserRole: PropTypes.func
 };
 
 export default HomeBar;

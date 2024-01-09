@@ -20,9 +20,9 @@ import HomeIcon from "@mui/icons-material/Home";
 import { config } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Image from "next/image";
-import NavDrawer from "./NavDrawer";
-import TopBar from "./TopBar";
-import Footer from "./Footer";
+import NavDrawer from "./_components/NavDrawer";
+import TopBar from "./_components/TopBar";
+import Footer from "./_components/Footer";
 config.autoAddCss = false;
 
 // const inter = Inter({ subsets: ['latin'] })

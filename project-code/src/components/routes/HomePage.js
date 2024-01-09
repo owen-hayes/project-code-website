@@ -10,35 +10,35 @@ import { Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: 'center',
+    textAlign: 'center'
     // background: 'warning',
     // color: 'primary',
   },
   paperContainer: {
-    backgroundImage: `url(${'main.jpeg'})`,
+    backgroundImage: `url(${'main.jpeg'})`
   },
   bigText: {
     padding: theme.spacing(2),
     textAlign: 'center',
     background: 'transparent',
-    color: 'primary',
+    color: 'primary'
   },
   chakra: {
-    fontFamily: 'Chakra Petch',
+    fontFamily: 'Chakra Petch'
   },
   mark: {
     // backgroundColor: 'white',
   },
   react_text: {
-    display: 'none',
+    display: 'none'
   },
   leftAlign: {
-    textAlign: 'left',
-  },
+    textAlign: 'left'
+  }
 }));
 
 let thingsToRotate = ['<h1>Welcome To <b>Project: Code!</b></h1>            '];
@@ -110,33 +110,28 @@ export default function HomePage() {
       </Typography> */}
 
       <Typography paragraph fontWeight={600}>
-        Come explore areas of computer science like web development, data
-        science, machine learning (ML), and artificial intelligence (AI) with
-        groups of like-minded peers at UIUC! With the guidance and assistance of
-        a Project Manager (PM) and a group of 5-10 students, you will spend the
-        semester or year working on a project centered around your area of
-        interest (web dev, data science, etc.).
+        Come explore areas of computer science like web development, data science, machine learning (ML), and artificial intelligence (AI)
+        with groups of like-minded peers at UIUC! With the guidance and assistance of a Project Manager (PM) and a group of 5-10 students,
+        you will spend the semester or year working on a project centered around your area of interest (web dev, data science, etc.).
       </Typography>
       <Button
-            variant='contained'
-            color='primary'
-            size='large'
-            startIcon={<FaDiscord />}
-            fullWidth
-            href='https://discord.gg/yCPDb8YRRp'
-            target='_blank'
-          >
-            Join our Discord
-          </Button>
-
+        variant='contained'
+        color='primary'
+        size='large'
+        startIcon={<FaDiscord />}
+        fullWidth
+        href='https://discord.gg/yCPDb8YRRp'
+        target='_blank'
+      >
+        Join our Discord
+      </Button>
 
       <Typography variant='h5' fontWeight='bold'>
         What kinds of projects can I work on?
       </Typography>
       <Typography paragraph>
-        Each semester, we offer a variety of projects touching on areas like web
-        development, data visualization, hardware engineering, machine learning,
-        game development, and more!{' '}
+        Each semester, we offer a variety of projects touching on areas like web development, data visualization, hardware engineering,
+        machine learning, game development, and more!{' '}
         <Link to='/published-projects' component={RouterLink}>
           Check out some of our published projects here.
         </Link>
@@ -146,9 +141,8 @@ export default function HomePage() {
         Can I lead a project?
       </Typography>
       <Typography paragraph>
-        If you're looking for an opportunity to lead a project you're passionate
-        about, we would love to consider you for a Project Manager (PM) role! PM
-        applications open near the end of each semester.
+        If you're looking for an opportunity to lead a project you're passionate about, we would love to consider you for a Project Manager
+        (PM) role! PM applications open near the end of each semester.
         {/* <Link href='https://forms.gle/WsWA5c6P9b2FBHy6A' target='_blank'>
           Apply here if you're interested in being a PM for Fall 2023!
         </Link> */}
@@ -162,18 +156,11 @@ export default function HomePage() {
         <Link to='calendar' component={RouterLink}>
           Take a look at out our calendar
         </Link>{' '}
-        to view our upcoming general meetings and workshops. We begin to
-        solidify project groups within the first few weeks of the semester, so
-        come to as many of our general meetings as possible. Also, be sure to
-        join our Discord, sign up for our mailing list, and follow us on
-        Instagram!
+        to view our upcoming general meetings and workshops. We begin to solidify project groups within the first few weeks of the semester,
+        so come to as many of our general meetings as possible. Also, be sure to join our Discord, sign up for our mailing list, and follow
+        us on Instagram!
       </Typography>
-      <Grid
-        container
-        spacing={1}
-        justifyContent='space-evenly'
-        alignItems='center'
-      >
+      <Grid container spacing={1} justifyContent='space-evenly' alignItems='center'>
         {/* <Grid item xs={12}>
           <Button
             variant='contained'

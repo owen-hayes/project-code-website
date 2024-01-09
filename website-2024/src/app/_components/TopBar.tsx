@@ -4,7 +4,7 @@ import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard";
 import { Box, Link, Typography } from "@mui/joy";
 import NextLink from "next/link";
-import "./globals.css";
+import "../globals.css";
 import { useTheme } from "@mui/joy/styles";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";

@@ -1,11 +1,4 @@
-import {
-  Box,
-  Button,
-  CircularProgress,
-  Container,
-  Grid,
-  Typography,
-} from '@mui/material';
+import { Box, Button, CircularProgress, Container, Grid, Typography } from '@mui/material';
 import React, { useState } from 'react';
 import AppleIcon from '@mui/icons-material/Apple';
 import GoogleIcon from '@mui/icons-material/Google';
@@ -19,13 +12,7 @@ export default function Calendar() {
         Calendar
       </Typography>
 
-      <Grid
-        container
-        spacing={1}
-        justifyContent='center'
-        alignItems='stretch'
-        mb={2}
-      >
+      <Grid container spacing={1} justifyContent='center' alignItems='stretch' mb={2}>
         <Grid item xs={12} sm={6} md={4}>
           <Button
             variant='contained'
