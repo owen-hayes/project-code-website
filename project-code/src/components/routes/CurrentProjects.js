@@ -62,11 +62,13 @@ export default function CurrentProjects() {
       <Typography variant='h3' fontWeight='bold' textAlign='center' mb={2}>
         Fall 2023 Projects
       </Typography>
+
       {projects.length === 0 && (
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
           <CircularProgress size={80} />
         </Box>
       )}
+
       <Grid container spacing={2} alignItems='stretch'>
         {/* Map all projects to a grid item with a ProjectCard inside */}
         {projects &&

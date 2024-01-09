@@ -38,16 +38,19 @@ function App() {
   // Create a MUI theme
   let darkTheme = createTheme({
     typography: {
-      fontFamily: '"Raleway", "Helvetica"',
+      fontFamily: '"Source Sans 3", "Raleway", "Helvetica"',
       h1: {
         fontWeight: 'bold',
       },
+      fontSize: 18
     },
     palette: {
       mode: darkState ? 'dark' : 'light',
       primary: { main: mainPrimaryColor },
       secondary: { main: mainSecondaryColor },
       barBg: { main: mainBarColor, black: '#333333', white: '#f5f5f5' },
+      // background: { default: darkState?'#1e1e1e': '#ffffff' },
+      // text: { secondary: '#121212' },
     },
   });
 
@@ -145,7 +148,10 @@ function App() {
                     <Route path='/oldprojects' element={<OldProjects />} />
                     <Route path='/calendar' element={<Calendar />} />
                     <Route path='/published-projects' element={<Projects />} />
-                    <Route path='/ongoing-projects' element={<CurrentProjects />} />
+                    <Route
+                      path='/ongoing-projects'
+                      element={<CurrentProjects />}
+                    />
                     <Route path='/attendance' element={<Attendance />} />
                     <Route
                       path='/upload-project'

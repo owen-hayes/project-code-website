@@ -1,10 +1,17 @@
-import { Box, Button, CircularProgress, Container, Grid, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Container,
+  Grid,
+  Typography,
+} from '@mui/material';
 import React, { useState } from 'react';
 import AppleIcon from '@mui/icons-material/Apple';
 import GoogleIcon from '@mui/icons-material/Google';
 
 export default function Calendar() {
-  const [loaded, setLoaded] = useState(false);
+  const [frameLoaded, setFrameLoaded] = useState(false);
 
   return (
     <Container sx={{ pt: 2 }}>
@@ -12,7 +19,13 @@ export default function Calendar() {
         Calendar
       </Typography>
 
-      <Grid container spacing={1} justifyContent='center' alignItems='stretch' mb={2}>
+      <Grid
+        container
+        spacing={1}
+        justifyContent='center'
+        alignItems='stretch'
+        mb={2}
+      >
         <Grid item xs={12} sm={6} md={4}>
           <Button
             variant='contained'
@@ -46,7 +59,7 @@ export default function Calendar() {
         </Grid>
       </Grid>
 
-      {!loaded && (
+      {!frameLoaded && (
         <Box sx={{ display: 'flex', width: '100%', justifyContent: 'center' }}>
           <CircularProgress size={80} />
         </Box>
@@ -56,13 +69,10 @@ export default function Calendar() {
         src='https://calendar.google.com/calendar/embed?src=h9el7b7k8413uo9m49f1h7brpc%40group.calendar.google.com&ctz=America%2FChicago&title=Project%3A%20Code&bgcolor=%23f5f5f5'
         width='100%'
         height='600'
-        frameBorder={0}
-        scrolling='no'
-        display={loaded ? 'block' : 'none'}
-        onLoad={() => {
-          setLoaded(true);
-        }}
-      ></iframe>
+        style={{ border: 'none' }}
+        display={frameLoaded ? 'block' : 'none'}
+        onLoad={() => setFrameLoaded(true)}
+      />
     </Container>
   );
 }
