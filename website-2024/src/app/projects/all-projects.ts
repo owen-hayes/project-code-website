@@ -30,7 +30,7 @@ const PROJECTS: ProjectsMapping = {
       "MMMMM NNNNN",
       "OOOOO PPPPP",
       "QQQQQ RRRRR",
-      "SSSSS TTTTT"
+      "SSSSS TTTTT",
     ],
     areas: ["App Dev"],
     started: "fall-2023",
@@ -80,11 +80,7 @@ const PROJECTS: ProjectsMapping = {
     projectManagers: [
       { name: "Saket Pochiraju", email: "ssaketmp2@illinois.edu" },
     ],
-    contributors: [
-      "AAAAA BBBBB",
-      "CCCCCC DDDDD",
-      "EEEEEE FFFFF",
-    ],
+    contributors: ["AAAAA BBBBB", "CCCCCC DDDDD", "EEEEEE FFFFF"],
     areas: ["Data Viz"],
     started: "fall-2023",
     alsoActiveIn: ["spring-2024"],
@@ -169,6 +165,9 @@ export function getProjectsFromSemester(semester: string) {
  * @returns the project corresponding to the specified ID
  */
 export function getProjectById(id: string) {
+  const projectWithoutId = PROJECTS[id];
+  if (projectWithoutId === undefined) return undefined;
+
   // Add ID to found project
   return { ...PROJECTS[id], id };
 }
