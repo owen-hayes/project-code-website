@@ -69,20 +69,20 @@ export default function Page({ params }: { params: { projectId: string } }) {
 
             <Grid container spacing={0.5} mt={0}>
               <Grid>
-                <Chip variant="outlined" color="primary">
+                <Chip variant="outlined" color="primary" sx={{fontSize: 'md'}}>
                   {prettyPrintSemester(project.started)}
                 </Chip>
               </Grid>
               {project.alsoActiveIn.map((semester) => (
                 <Grid>
-                  <Chip variant="outlined" color="primary">
+                  <Chip variant="outlined" color="primary" sx={{fontSize: 'md'}}>
                     {prettyPrintSemester(semester)}
                   </Chip>
                 </Grid>
               ))}
               {project.areas.map((area) => (
                 <Grid>
-                  <Chip variant="outlined">{area}</Chip>
+                  <Chip variant="outlined" sx={{fontSize: 'md'}}>{area}</Chip>
                 </Grid>
               ))}
             </Grid>
@@ -134,7 +134,7 @@ export default function Page({ params }: { params: { projectId: string } }) {
           ))}
         </Grid> */}
 
-        <Typography level="title-lg" mt={2}>
+        <Typography level="title-lg" mt={2} sx={{fontSize: 'xl'}}>
           Led by <PMList projectManagers={project.projectManagers} />
         </Typography>
         {project.contributors && project.contributors.length > 0 && (
@@ -170,7 +170,7 @@ export default function Page({ params }: { params: { projectId: string } }) {
 
       {/* <Typography level="h2">Description</Typography> */}
       {project.description && (
-        <Typography mt={2}>{project.description}</Typography>
+        <Typography mt={2} level="body-lg">{project.description}</Typography>
       )}
     </>
   );

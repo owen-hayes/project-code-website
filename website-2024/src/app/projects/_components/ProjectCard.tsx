@@ -43,7 +43,7 @@ export default function ProjectCard({
       <CardContent>
         <Grid container spacing={1}>
           <Grid xs={9} sm={8}>
-            <Typography level="title-lg" sx={{ mt: 0 }}>
+            <Typography level="title-lg" sx={{ mt: 0, fontSize: 'xl' }}>
               {title}
             </Typography>
             {/* <Grid container xs={12} bgcolor={"green"} spacing={0.5} mt={0.5}>
@@ -84,7 +84,7 @@ export default function ProjectCard({
         <Grid container spacing={0.5} mt={0.5}>
           {areas.map((area) => (
             <Grid>
-              <Chip variant="outlined">{area}</Chip>
+              <Chip variant="outlined" sx={{fontSize: 'md'}}>{area}</Chip>
             </Grid>
           ))}
         </Grid>

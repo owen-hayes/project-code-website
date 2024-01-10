@@ -65,9 +65,8 @@ export default function Home() {
             <Typography level="body-lg">
               Explore areas of computer science like{" "}
               <Typography fontWeight="bold">
-                app / web development, data science, machine learning,
-                virtual reality / augmented reality, and game
-                development{" "}
+                app / web development, data science, machine learning, virtual
+                reality / augmented reality, and game development{" "}
               </Typography>
               with groups of like-minded peers at UIUC! Join us to work with a
               Project Manager (PM) and a group of 5-10 students and spend the
@@ -264,6 +263,7 @@ export default function Home() {
             <Card variant="soft" sx={{ maxWidth: "md", height: "100%" }}>
               <CardContent>
                 <Typography level="title-lg">{event.title}</Typography>
+
                 {event.date && event.date !== "" && (
                   <Typography level="title-md">{event.date}</Typography>
                 )}
@@ -278,14 +278,14 @@ export default function Home() {
                         href: event.locationLink,
                       },
                     }}
-                    sx={{ fontWeight: 600, fontSize: "md" }}
+                    sx={{ fontWeight: 600, fontSize: "md", mb: 1.5 }}
                   >
                     {/* <Typography level="title-md" fontWeight="600"> */}
                     {event.location}
                     {/* </Typography> */}
                   </Chip>
                 )}
-
+                <Divider sx={{ mt: 0.5, mb: 1 }} />
                 {event.description !== "" && (
                   <Typography>{event.description}</Typography>
                 )}
