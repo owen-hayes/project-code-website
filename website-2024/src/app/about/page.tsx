@@ -25,9 +25,9 @@ export default function Page() {
         Project: Code was founded in 2019 to provide UIUC students of all
         academic backgrounds an opportunity to learn and develop their skills
         across a variety of Computer Science (CS) areas / domains. In addition
-        to offering projects for students to contribute to, we also host
-        networking and company events from organizations like Uber and SIG to
-        help students prepare for their careers.
+        to offering projects for students to contribute to, we also host résumé
+        reviews as well as networking and company events from organizations like
+        Uber and SIG to help students prepare for their careers.
       </Typography>
 
       <Typography level="body-lg" mt={2}>

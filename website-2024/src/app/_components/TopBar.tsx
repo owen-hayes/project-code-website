@@ -10,7 +10,7 @@ import { useTheme } from "@mui/joy/styles";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import Image from "next/image";
 import NavDrawer from "./NavDrawer";
-import InfoIcon from '@mui/icons-material/Info';
+import InfoIcon from "@mui/icons-material/Info";
 import React from "react";
 
 export const NAV_LINKS = [
@@ -46,7 +46,7 @@ export default function TopBar() {
         style={{ WebkitUserSelect: "none" }} // Disable select text in image on Safari
       >
         <Image
-          src="project-code.svg"
+          src="/project-code.svg"
           alt="Project: Code logo"
           width={100}
           height={100}
@@ -64,8 +64,9 @@ export default function TopBar() {
           color: "pageLink.primary",
         }}
       >
-        {NAV_LINKS.map((link) => (
+        {NAV_LINKS.map((link, idx) => (
           <Typography
+            key={idx}
             level="h4"
             sx={{
               alignItems: "center",
@@ -76,7 +77,9 @@ export default function TopBar() {
               {React.createElement(link.icon, {
                 sx: { mr: 1 },
               })}
-              <Typography sx={{ color: "text.primary" }}>{link.title}</Typography>
+              <Typography sx={{ color: "text.primary" }}>
+                {link.title}
+              </Typography>
             </Link>
           </Typography>
         ))}

@@ -12,8 +12,8 @@ declare module '@mui/joy/styles' {
 const theme = extendTheme({
   typography: {},
   fontFamily: {
-    display: '"Source Sans 3 Variable"',
-    body: '"Source Sans 3 Variable"',
+    display: '"Source Sans 3 Variable", sans-serif',
+    body: '"Source Sans 3 Variable", sans-serif',
   },
   colorSchemes: {
     light: {
