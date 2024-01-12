@@ -47,8 +47,16 @@ export default function Home() {
   return (
     <Stack>
       {/* Main heading */}
-      <Typography level="h1" sx={{ textAlign: "center", mb: 1, fontSize: 48 }}>
-        <Typography fontWeight="normal">Welcome to </Typography>
+      <Typography
+        level="h1"
+        sx={{ textAlign: "center", mb: 1, fontSize: 48 }}
+      >
+        <Typography
+          fontWeight="normal"
+          display={{ xs: "block", sm: "inline" }}
+        >
+          Welcome to{" "}
+        </Typography>
         <Typography
           // Display "Project: Code!" on new line on mobile
           display={{ xs: "block", sm: "inline" }}
@@ -163,7 +171,7 @@ export default function Home() {
           >
             {/* only layout="fill" makes sense for using with AspectRatio */}
             <Image
-              alt="TODO"
+              alt="Students in a Project: Code meeting in a lecture hall"
               src="/meeting-blur-crop-2.jpg"
               layout="fill"
               // placeholder="blur"
@@ -229,7 +237,7 @@ export default function Home() {
           },
           {
             title: "General Meeting #2 – Projects Intro",
-            date: "Wed, Jan 24, 2024, 6–7 PM",
+            date: "Thu, Jan 25, 2024, 6–7 PM",
             location: "Siebel 1404",
             locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
             description:
@@ -258,8 +266,8 @@ export default function Home() {
           //   description:
           //     "Hear again from project groups and see each team's final product!",
           // },
-        ].map((event) => (
-          <Grid xs={12} sm={6} md={4}>
+        ].map((event, idx) => (
+          <Grid xs={12} sm={6} md={4} key={idx}>
             <Card variant="soft" sx={{ maxWidth: "md", height: "100%" }}>
               <CardContent>
                 <Typography level="title-lg">{event.title}</Typography>

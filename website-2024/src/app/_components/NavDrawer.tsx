@@ -84,6 +84,7 @@ export default function NavDrawer() {
                   component={NextLink}
                   href={page.href}
                   sx={{ py: 2 }}
+                  passHref
                 >
                   <Typography
                     level="h4"

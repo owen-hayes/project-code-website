@@ -94,7 +94,7 @@ export default function ProjectCard({
         </Typography>
       </CardContent>
       <CardActions>
-        <Button variant="solid" component={NextLink} href={`/projects/${id}`}>
+        <Button variant="solid" component={NextLink} href={`/projects/${id}`} passHref>
           View Details
         </Button>
       </CardActions>

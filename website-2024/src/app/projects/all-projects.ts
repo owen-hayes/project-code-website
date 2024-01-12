@@ -1,44 +1,19 @@
 import { ProjectManager } from "./_components/ProjectCard";
 
 const PROJECTS: ProjectsMapping = {
-  // "something-new": {
-  //   title: "Something New 24",
-  //   emoji: "‼️",
-  //   projectManagers: [{ name: "Owen Hayes" }],
-  //   contributors: ["Evander Wildheart"],
-  //   areas: ["ML/AI"],
-  //   started: "spring-2024",
-  //   alsoActiveIn: [],
-  //   // description: "No idea",
-  //   // viewProjectLink: "https://google.com",
-  //   // sourceCodeLink: "https://github.com",
-  // },
-
   "bird-guide": {
     title: "Bird Guide",
     emoji: "🐦",
     projectManagers: [
       { name: "Ananth Ramaswamy", email: "ananth3@illinois.edu" },
     ],
-    contributors: [
-      "AAAAA BBBBB",
-      "CCCCCC DDDDD",
-      "EEEEEE FFFFF",
-      "GGGGG HHHHH",
-      "IIIII JJJJJ",
-      "KKKKK LLLLL",
-      "MMMMM NNNNN",
-      "OOOOO PPPPP",
-      "QQQQQ RRRRR",
-      "SSSSS TTTTT",
-    ],
-    areas: ["App Dev"],
+    // contributors: [],
+    areas: ["App Dev", "ML"],
     started: "fall-2023",
     alsoActiveIn: ["spring-2024"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque auctor et purus vel interdum. Maecenas at neque nec mi vestibulum euismod. Vivamus pulvinar, augue eget suscipit pellentesque, nibh justo condimentum enim, quis efficitur dolor nibh non mauris. Quisque hendrerit magna et ligula scelerisque, finibus eleifend orci tempus. Maecenas tempus ultrices dictum. Aenean lacinia lacus neque, eget vehicula tortor placerat sed. Aliquam sagittis mi ac congue hendrerit.",
-    viewProjectLink: "https://google.com",
-    sourceCodeLink: "https://github.com",
+    description: "Details coming soon",
+    // viewProjectLink: "https://google.com",
+    // sourceCodeLink: "https://github.com",
   },
 
   "mood-tracker": {
@@ -49,6 +24,7 @@ const PROJECTS: ProjectsMapping = {
     areas: ["Data Viz", "Web Dev"],
     started: "fall-2023",
     alsoActiveIn: [],
+    description: "Details coming soon",
   },
 
   "speech-interpretation": {
@@ -62,6 +38,7 @@ const PROJECTS: ProjectsMapping = {
     areas: ["ML"],
     started: "fall-2023",
     alsoActiveIn: [],
+    description: "Details coming soon",
   },
 
   "openspace-uiuc": {
@@ -72,6 +49,7 @@ const PROJECTS: ProjectsMapping = {
     areas: ["Web Dev"],
     started: "fall-2023",
     alsoActiveIn: [],
+    description: "Details coming soon",
   },
 
   "wikipedia-similarity": {
@@ -80,11 +58,13 @@ const PROJECTS: ProjectsMapping = {
     projectManagers: [
       { name: "Saket Pochiraju", email: "ssaketmp2@illinois.edu" },
     ],
-    contributors: ["AAAAA BBBBB", "CCCCCC DDDDD", "EEEEEE FFFFF"],
+    // contributors: ["AAAAA BBBBB", "CCCCCC DDDDD", "EEEEEE FFFFF"],
+    contributors: [],
     areas: ["Data Viz"],
     started: "fall-2023",
     alsoActiveIn: ["spring-2024"],
-    sourceCodeLink: "https://gitlab.com",
+    // sourceCodeLink: "https://gitlab.com",
+    description: "Details coming soon",
   },
 
   "ai-insecurities": {
@@ -98,6 +78,7 @@ const PROJECTS: ProjectsMapping = {
     areas: ["AI"],
     started: "fall-2023",
     alsoActiveIn: ["spring-2024"],
+    description: "Details coming soon",
   },
 };
 
@@ -106,7 +87,7 @@ export interface ProjectsMapping {
     title: string;
     emoji?: string;
     projectManagers: ProjectManager[];
-    contributors: string[];
+    contributors?: string[];
     areas: string[];
     started: string;
     alsoActiveIn: string[];
@@ -121,7 +102,7 @@ export interface Project {
   title: string;
   emoji?: string;
   projectManagers: ProjectManager[];
-  contributors: string[];
+  contributors?: string[];
   areas: string[];
   started: string;
   alsoActiveIn: string[];
@@ -180,6 +161,10 @@ export function getProjectById(id: string) {
  */
 export function prettyPrintSemester(semester: string) {
   const splitUp = semester.split("-");
+  if (splitUp.length !== 2) {
+    return semester;
+  }
+
   return (
     splitUp[0][0].toUpperCase() + splitUp[0].substring(1) + " " + splitUp[1]
   );

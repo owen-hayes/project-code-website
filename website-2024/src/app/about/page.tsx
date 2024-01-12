@@ -35,9 +35,9 @@ export default function Page() {
         to. In the past, these projects have focused on domains of CS like web
         development, app development, data visualization, data science, hardware
         engineering, machine learning, artificial intelligence, virtual reality,
-        and game development. Each project is led by a Project Manager (PM)
-        (TODO: Link to new PM page to explain and have link to form) who has
-        experience working with a certain area of CS.
+        and game development. Each project is led by a Project Manager (PM){" "}
+        {/* (TODO: Link to new PM page to explain and have link to form)  */}
+        who has experience working with a certain area of CS.
       </Typography>
 
       <Typography level="body-lg" mt={2}>

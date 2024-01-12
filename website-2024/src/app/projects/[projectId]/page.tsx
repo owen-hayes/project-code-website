@@ -151,6 +151,7 @@ export default function Page({ params }: { params: { projectId: string } }) {
             endDecorator={<LaunchIcon />}
             component={NextLink}
             href={project.viewProjectLink}
+            passHref
           >
             View Project
           </Button>
@@ -162,6 +163,7 @@ export default function Page({ params }: { params: { projectId: string } }) {
             endDecorator={<LaunchIcon />}
             component={NextLink}
             href={project.sourceCodeLink}
+            passHref
           >
             Source Code
           </Button>

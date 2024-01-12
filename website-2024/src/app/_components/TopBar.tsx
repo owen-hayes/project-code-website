@@ -44,6 +44,7 @@ export default function TopBar() {
         component={NextLink}
         href="/"
         style={{ WebkitUserSelect: "none" }} // Disable select text in image on Safari
+        passHref
       >
         <Image
           src="/project-code.svg"
@@ -73,7 +74,7 @@ export default function TopBar() {
               display: "flex",
             }}
           >
-            <Link component={NextLink} href={link.href}>
+            <Link component={NextLink} href={link.href} passHref>
               {React.createElement(link.icon, {
                 sx: { mr: 1 },
               })}
