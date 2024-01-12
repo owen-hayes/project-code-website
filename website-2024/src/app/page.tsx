@@ -47,14 +47,8 @@ export default function Home() {
   return (
     <Stack>
       {/* Main heading */}
-      <Typography
-        level="h1"
-        sx={{ textAlign: "center", mb: 1, fontSize: 48 }}
-      >
-        <Typography
-          fontWeight="normal"
-          display={{ xs: "block", sm: "inline" }}
-        >
+      <Typography level="h1" sx={{ textAlign: "center", mb: 1, fontSize: 48 }}>
+        <Typography fontWeight="normal" display={{ xs: "block", sm: "inline" }}>
           Welcome to{" "}
         </Typography>
         <Typography
@@ -78,8 +72,16 @@ export default function Home() {
               </Typography>
               with groups of like-minded peers at UIUC! Join us to work with a
               Project Manager (PM) and a group of 5-10 students and spend the
-              semester or year working on a project centered around your area of
-              interest (web dev, data science, etc.).
+              semester or year working on a{" "}
+              <Link
+                component={NextLink}
+                href="/projects"
+                passHref
+                sx={{ display: "inline" }}
+              >
+                project centered around your area of interest
+              </Link>{" "}
+              (web dev, data science, etc.).
             </Typography>
           </Grid>
 
