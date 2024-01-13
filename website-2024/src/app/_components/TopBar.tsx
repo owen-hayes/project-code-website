@@ -1,17 +1,15 @@
 "use client";
 import "@fontsource/inter";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard";
 import { Box, Link, Typography } from "@mui/joy";
 import NextLink from "next/link";
 import "../globals.css";
-import { useTheme } from "@mui/joy/styles";
 
 import "@fortawesome/fontawesome-svg-core/styles.css";
-import Image from "next/image";
-import NavDrawer from "./NavDrawer";
 import InfoIcon from "@mui/icons-material/Info";
+import Image from "next/image";
 import React from "react";
+import NavDrawer from "./NavDrawer";
 
 export const NAV_LINKS = [
   {
@@ -27,15 +25,11 @@ export const NAV_LINKS = [
 ];
 
 export default function TopBar() {
-  const theme = useTheme(); // The runtime theme.
   return (
     <Box
       sx={{
         display: "flex",
         justifyContent: "space-between",
-        // maxWidth: 1150,
-        // marginX: 'auto',
-        // paddingX: {xs: 1.5, sm: 3, lg: 0},
         paddingY: 1,
       }}
     >
@@ -83,34 +77,9 @@ export default function TopBar() {
             </Link>
           </Typography>
         ))}
-
-        {/* <Typography
-          level="h4"
-          sx={{
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          <Link component={NextLink} href="/calendar">
-            <CalendarMonthIcon sx={{ mr: 1 }} />
-            <Typography sx={{ color: "text.primary" }}>Calendar</Typography>
-          </Link>
-        </Typography>
-
-        <Typography
-          level="h4"
-          sx={{
-            alignItems: "center",
-            display: "flex",
-          }}
-        >
-          <Link component={NextLink} href="/projects">
-            <DeveloperBoardIcon sx={{ mr: 1 }} />
-            <Typography sx={{ color: "text.primary" }}>Projects</Typography>
-          </Link>
-        </Typography> */}
       </Box>
 
+      {/* Nav Drawer only shown on mobile */}
       <NavDrawer />
     </Box>
   );

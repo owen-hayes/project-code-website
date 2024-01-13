@@ -25,11 +25,11 @@ import TopBar from "./_components/TopBar";
 import Footer from "./_components/Footer";
 config.autoAddCss = false;
 
-// const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: "Project: Code",
-  description: "Project: Code is a programming and Computer Science-based RSO at UIUC which allows students to pursue their interests in programming topics with group-based projects.",
+  description:
+    "Project: Code is a programming and Computer Science-based RSO at UIUC which allows students to pursue their interests in programming topics with group-based projects.",
 };
 
 export default function RootLayout({
@@ -38,39 +38,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    // <html lang="en">
-    //   <head>
-    //     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    //   </head>
-    //   <CssVarsProvider theme={extendTheme({typography: {}})}>
-
-    //     {children}
-    //   </CssVarsProvider>
-    // </html>
     <html lang="en">
       <body>
         <ThemeRegistry options={{ key: "joy" }}>
           <Box
             sx={{
-              maxWidth: 1150,
-              marginX: "auto",
-              // paddingX: {sm: 5, lg: 0},
-              paddingX: { xs: 2.5, sm: 3, lg: 0 },
+              maxWidth: "lg", // "lg" = 1200 px (https://mui.com/material-ui/customization/breakpoints/)
+              marginX: "auto", // Center on page
+              paddingX: { xs: 2.5, sm: 3 },
             }}
             id="page-container"
           >
             <TopBar />
 
-            <Box
-              id="content-wrap"
-              // sx={
-              //   {
-              //     // backgroundColor: 'red'
-              //   }
-              // }
-            >
-              {children}
-            </Box>
+            <Box id="content-wrap">{children}</Box>
 
             <Footer />
           </Box>
@@ -78,14 +59,4 @@ export default function RootLayout({
       </body>
     </html>
   );
-} // app/layout.tsx
-// export default function RootLayout() {
-//   const { children } = props;
-//   return (
-//     <html lang="en">
-//       <body>
-//         <ThemeRegistry options={{ key: 'joy' }}>{children}</ThemeRegistry>
-//       </body>
-//     </html>
-//   );
-// }
+}

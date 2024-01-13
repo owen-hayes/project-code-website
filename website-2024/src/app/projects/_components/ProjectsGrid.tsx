@@ -6,7 +6,7 @@ import {
   Grid,
   Typography,
 } from "@mui/joy";
-import { Project } from "../all-projects";
+import { Project } from "../projects";
 import ProjectCard from "./ProjectCard";
 import LaunchIcon from "@mui/icons-material/Launch";
 
@@ -32,6 +32,7 @@ export default function ProjectsGrid({
                 Spring 2024 Project Manager applications are open!
               </Typography>
             </CardContent>
+
             <CardActions>
               <Button
                 size="md"
@@ -58,6 +59,7 @@ export default function ProjectsGrid({
                 Meeting #2!
               </Typography>
             </CardContent>
+            
             <CardActions>
               <Button
                 size="md"
@@ -74,8 +76,8 @@ export default function ProjectsGrid({
         </Grid>
       )}
 
-      {projects.map((project) => (
-        <Grid xs={12} sm={6} md={4}>
+      {projects.map((project, idx) => (
+        <Grid xs={12} sm={6} md={4} key={idx}>
           <ProjectCard
             title={project.title}
             projectManagers={project.projectManagers}

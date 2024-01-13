@@ -13,11 +13,7 @@ import {
 import NextLink from "next/link";
 
 import MailIcon from "@mui/icons-material/Mail";
-
-export interface ProjectManager {
-  name: string;
-  email?: string;
-}
+import { ProjectManager } from "../projects";
 
 export interface ProjectCardProps {
   title: string;
@@ -27,6 +23,9 @@ export interface ProjectCardProps {
   id: string;
 }
 
+/**
+ * Card that displays project information.
+ */
 export default function ProjectCard({
   title,
   emoji,
@@ -34,25 +33,14 @@ export default function ProjectCard({
   areas,
   id,
 }: ProjectCardProps) {
-  const andFormatter = new Intl.ListFormat("en", {
-    style: "long",
-    type: "conjunction",
-  });
   return (
     <Card sx={{ gap: 0, height: "100%" }}>
       <CardContent>
         <Grid container spacing={1}>
           <Grid xs={9} sm={8}>
-            <Typography level="title-lg" sx={{ mt: 0, fontSize: 'xl' }}>
+            <Typography level="title-lg" sx={{ mt: 0, fontSize: "xl" }}>
               {title}
             </Typography>
-            {/* <Grid container xs={12} bgcolor={"green"} spacing={0.5} mt={0.5}>
-            {areas.map((area) => (
-              <Grid>
-                <Chip variant="outlined">{area}</Chip>
-              </Grid>
-            ))}
-          </Grid> */}
           </Grid>
 
           {/* Spacer where avatar could fit to prevent title from overlapping */}
@@ -63,9 +51,7 @@ export default function ProjectCard({
               sx={{ display: "flex" }}
               justifyContent="flex-end"
               alignItems="center"
-            >
-              {/* <Avatar sx={{ "--Avatar-size": "3rem" }}>{emoji}</Avatar> */}
-            </Grid>
+            ></Grid>
           )}
         </Grid>
 
@@ -81,20 +67,29 @@ export default function ProjectCard({
             {emoji}
           </Avatar>
         )}
+
         <Grid container spacing={0.5} mt={0.5}>
-          {areas.map((area) => (
-            <Grid>
-              <Chip variant="outlined" sx={{fontSize: 'md'}}>{area}</Chip>
+          {areas.map((area, idx) => (
+            <Grid key={idx}>
+              <Chip variant="outlined" sx={{ fontSize: "md" }}>
+                {area}
+              </Chip>
             </Grid>
           ))}
         </Grid>
 
         <Typography level="title-md" mt={1}>
-          Led by <PMList projectManagers={projectManagers} />
+          Led by <PMLinkList projectManagers={projectManagers} />
         </Typography>
       </CardContent>
+
       <CardActions>
-        <Button variant="solid" component={NextLink} href={`/projects/${id}`} passHref>
+        <Button
+          variant="solid"
+          component={NextLink}
+          href={`/projects/${id}`}
+          passHref
+        >
           View Details
         </Button>
       </CardActions>
@@ -102,7 +97,10 @@ export default function ProjectCard({
   );
 }
 
-export function PMList({
+/**
+ * Renders a list of project managers with email links.
+ */
+export function PMLinkList({
   projectManagers: projectManagers,
 }: {
   projectManagers: ProjectManager[];
@@ -122,7 +120,7 @@ export function PMList({
   }
 
   if (projectManagers.length === 0) {
-    return null; // or handle empty list case
+    return null;
   }
 
   if (projectManagers.length === 1) {

@@ -1,20 +1,18 @@
 "use client";
+import LaunchIcon from "@mui/icons-material/Launch";
 import {
-  Box,
   Button,
   Card,
   CardActions,
   CardContent,
-  Divider,
   Grid,
+  Link,
   Stack,
   Typography,
 } from "@mui/joy";
 import BioCard from "./_components/BioCard";
 import { EXEC } from "./_people/exec";
 import { PROJECT_MANAGERS } from "./_people/project-managers";
-import FeedIcon from "@mui/icons-material/Feed";
-import LaunchIcon from "@mui/icons-material/Launch";
 
 export default function Page() {
   return (
@@ -75,8 +73,6 @@ export default function Page() {
         ))}
       </Grid>
 
-      {/* <Divider sx={{ mt:4, mb:2 }} /> */}
-
       <Typography level="h2" mt={3} mb={1}>
         Project Managers
       </Typography>
@@ -117,6 +113,17 @@ export default function Page() {
           </Card>
         </Grid>
       </Grid>
+
+      <Typography level="h2" mt={3} mb={1}>
+        Contact
+      </Typography>
+      <Typography>
+        For general inquiries, please contact us at{" "}
+        <Link href="mailto:project.code.uiuc@gmail.com">
+          project.code.uiuc@gmail.com
+        </Link>
+        .
+      </Typography>
     </Stack>
   );
 }

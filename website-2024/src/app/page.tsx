@@ -1,56 +1,37 @@
-"use client";
-import Image from "next/image";
-import Button from "@mui/joy/Button";
+// "use client";
+import { faDiscord } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import AppleIcon from "@mui/icons-material/Apple";
+import GoogleIcon from "@mui/icons-material/Google";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import LaunchIcon from "@mui/icons-material/Launch";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import MailIcon from "@mui/icons-material/Mail";
 import {
   AspectRatio,
-  Box,
   Card,
   CardContent,
   Chip,
   Divider,
-  FormControl,
-  FormLabel,
   Grid,
-  Input,
   Link,
-  Sheet,
-  Stack,
   Typography,
-  useColorScheme,
-  useTheme,
 } from "@mui/joy";
-import { useEffect, useState } from "react";
-import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
-import { DiscountRounded, Launch } from "@mui/icons-material";
+import Button from "@mui/joy/Button";
+import Image from "next/image";
 import NextLink from "next/link";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCheck, faTrash } from "@fortawesome/free-solid-svg-icons";
-import Person from "@mui/icons-material/Person";
-import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard";
-import MailIcon from "@mui/icons-material/Mail";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import { faDiscord } from "@fortawesome/free-brands-svg-icons";
-import LaunchIcon from "@mui/icons-material/Launch";
-import AppleIcon from "@mui/icons-material/Apple";
-import GoogleIcon from "@mui/icons-material/Google";
 
-// import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
-
-// Supports weights 200-900
-import "@fontsource-variable/source-sans-3";
-
-// import '@fontsource/inter';
+import { MEETINGS } from "./meetings";
 
 export default function Home() {
-  const theme = useTheme();
   return (
-    <Stack>
+    <>
       {/* Main heading */}
       <Typography level="h1" sx={{ textAlign: "center", mb: 1, fontSize: 48 }}>
         <Typography fontWeight="normal" display={{ xs: "block", sm: "inline" }}>
           Welcome to{" "}
         </Typography>
+
         <Typography
           // Display "Project: Code!" on new line on mobile
           display={{ xs: "block", sm: "inline" }}
@@ -79,42 +60,30 @@ export default function Home() {
                 passHref
                 sx={{ display: "inline" }}
               >
-                project centered around your area of interest
+                project centered around your area of interest (web dev, data
+                science, etc.).
               </Link>{" "}
-              (web dev, data science, etc.).
             </Typography>
           </Grid>
 
           {/* Container for buttons */}
-          <Grid
-            container
-            xs={12}
-            spacing={1}
-            sx={{ flexGrow: 1 }}
-            // bgcolor="purple"
-          >
-            {/* <Grid spacing={1} sx={{ bgcolor: "magenta" }}> */}
-            <Grid
-              xs={12}
-              sm={6}
-              md={6}
-              // md={4}
-            >
-              {/* <Box sx={{ backgroundColor: "green" }}>hi</Box> */}
+          <Grid container xs={12} spacing={1}>
+            {/* Buttons take full width (12/12) on mobile, or half width (6/12) on screens that are "sm" or above */}
+            <Grid xs={12} sm={6}>
               <Button
                 size="lg"
                 startDecorator={<FontAwesomeIcon icon={faDiscord} size="lg" />}
                 component="a"
                 href="https://discord.gg/yCPDb8YRRp"
-                target="_blank"
+                target="_blank" // Open in new tab
                 fullWidth // Take full width of grid item
-                sx={{ height: "100%" }}
+                sx={{ height: "100%" }} // Take full height of grid item for when adjacent button is naturally taller than this one
               >
                 JOIN OUR DISCORD
               </Button>
             </Grid>
 
-            <Grid xs={12} md={6} sm={6}>
+            <Grid xs={12} sm={6}>
               <Button
                 variant="outlined"
                 size="lg"
@@ -129,7 +98,7 @@ export default function Home() {
               </Button>
             </Grid>
 
-            <Grid xs={12} md={6} sm={6}>
+            <Grid xs={12} sm={6}>
               <Button
                 variant="outlined"
                 size="lg"
@@ -143,7 +112,8 @@ export default function Home() {
                 FOLLOW US ON INSTAGRAM
               </Button>
             </Grid>
-            <Grid xs={12} md={6} sm={6}>
+
+            <Grid xs={12} sm={6}>
               <Button
                 variant="outlined"
                 size="lg"
@@ -158,126 +128,104 @@ export default function Home() {
               </Button>
             </Grid>
           </Grid>
-          {/* </Grid> */}
         </Grid>
 
-        {/* Right side with image */}
+        {/* Image of meeting appears on right side (desktop) or just below buttons (mobile) */}
         <Grid xs={12} md={6} alignSelf="center">
-          {/* <Grid xs={12}> */}
-          {/* <Box> */}
           <AspectRatio
             variant="outlined"
             ratio="16/9"
             objectFit="cover"
             sx={{ borderRadius: "lg" }}
           >
-            {/* only layout="fill" makes sense for using with AspectRatio */}
             <Image
               alt="Students in a Project: Code meeting in a lecture hall"
-              src="/meeting-blur-crop-2.jpg"
-              layout="fill"
-              // placeholder="blur"
+              src="/meeting.jpg"
+              fill // Completely fill the AspectRatio component
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" // Improve performance since image is smaller on desktop
             />
           </AspectRatio>
-          {/* </Box> */}
-          {/* </Grid> */}
         </Grid>
       </Grid>
 
       <Divider sx={{ mt: 5, mb: 3 }} />
+
       <Typography level="h2">Meetings and Events</Typography>
+
+      {/* Chip buttons to subscribe to Apple/Google calendar feed */}
       <Grid container spacing={0.5}>
+        {/* Grid item with chip button for Google Calendar subscription */}
         <Grid>
           <Chip
             variant="outlined"
-            // color="primary"
             startDecorator={<AppleIcon />}
             endDecorator={<LaunchIcon />}
             slotProps={{
               action: {
+                // Make it a link
                 component: "a",
-                href: "webcal://calendar.google.com/calendar/ical/h9el7b7k8413uo9m49f1h7brpc%40group.calendar.google.com/public/basic.ics",
+
+                /*
+                  Format for iOS subscription link to Google Calendar is:
+                  "webcal://calendar.google.com/calendar/ical/[CALENDAR ID]/public/basic.ics"
+
+                  Calendar ID can be found in:
+                  Google Calendar settings > [Calendar Name] > Integrate calendar
+                */
+                href: "webcal://calendar.google.com/calendar/ical/h9el7b7k8413uo9m49f1h7brpc@group.calendar.google.com/public/basic.ics",
               },
             }}
             sx={{ fontWeight: 600, fontSize: "md" }}
           >
-            {/* <Typography level="title-md" fontWeight="600"> */}
             Subscribe to Apple Calendar
-            {/* </Typography> */}
           </Chip>
         </Grid>
+
+        {/* Grid item with chip button for Google Calendar subscription */}
         <Grid>
           <Chip
             variant="outlined"
-            // color="primary"
             startDecorator={<GoogleIcon />}
             endDecorator={<LaunchIcon />}
             slotProps={{
               action: {
                 component: "a",
+
+                /*
+                  Format for Google Calendar subscription:
+                  "https://calendar.google.com/calendar/render?cid=[CALENDAR ID]"
+
+                  Calendar ID can be found in:
+                  Google Calendar settings > [Calendar Name] > Integrate calendar
+                */
                 href: "https://calendar.google.com/calendar/render?cid=h9el7b7k8413uo9m49f1h7brpc@group.calendar.google.com",
               },
             }}
             sx={{ fontWeight: 600, fontSize: "md" }}
           >
-            {/* <Typography level="title-md" fontWeight="600"> */}
             Subscribe to Google Calendar
-            {/* </Typography> */}
           </Chip>
         </Grid>
       </Grid>
 
+      {/* Grid for meetings */}
       <Grid container spacing={2} alignItems="stretch" mt={1}>
-        {[
-          {
-            title: "General Meeting #1 – Info Session",
-            date: "Thu, Jan 18, 2024, 6–7 PM",
-            location: "Siebel 1404",
-            locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
-            description:
-              "Learn more about Project: Code and how to get started on a project this semester!",
-          },
-          {
-            title: "General Meeting #2 – Projects Intro",
-            date: "Thu, Jan 25, 2024, 6–7 PM",
-            location: "Siebel 1404",
-            locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
-            description:
-              "Learn about the projects being held this semester and select the project you are most interested in working on!",
-          },
-          {
-            title: "More meetings coming soon!",
-            // date: "Wed, Jan 24, 2024, 6–7 PM",
-            description:
-              "Keep an eye on Discord and this site so you never miss a meeting! You can also subscribe to our calendar with the links above.",
-          },
-
-          // {
-          //   title: "General Meeting #3 – Midpoint Presentations",
-          //   date: "Early March (Date & Time TBA)",
-          //   location: "Siebel 1404",
-          //   locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
-          //   description:
-          //     "Hear from project groups about the progress they've made so far this semester!",
-          // },
-          // {
-          //   title: "General Meeting #4 – Final Presentations",
-          //   date: "Late April (Date & Time TBA)",
-          //   location: "Siebel 1404",
-          //   locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
-          //   description:
-          //     "Hear again from project groups and see each team's final product!",
-          // },
-        ].map((event, idx) => (
+        {MEETINGS.map((meeting, idx) => (
+          // Take full width on mobile, half width (6/12) on "sm", and third width (4/12) on "md"+
           <Grid xs={12} sm={6} md={4} key={idx}>
-            <Card variant="soft" sx={{ maxWidth: "md", height: "100%" }}>
+            {/* Height expands to match adjacent card if necessary */}
+            <Card variant="soft" sx={{ height: "100%" }}>
               <CardContent>
-                <Typography level="title-lg">{event.title}</Typography>
+                {/* Always show title */}
+                <Typography level="title-lg">{meeting.title}</Typography>
 
-                {event.date && event.date !== "" && (
-                  <Typography level="title-md">{event.date}</Typography>
+                {/* Only show date if it exists */}
+                {meeting.date && meeting.date !== "" && (
+                  <Typography level="title-md">{meeting.date}</Typography>
                 )}
-                {event.location && event.location !== "" && (
+
+                {/* Only show location if it exists */}
+                {meeting.location && meeting.location !== "" && (
                   <Chip
                     variant="solid"
                     color="primary"
@@ -285,27 +233,26 @@ export default function Home() {
                     slotProps={{
                       action: {
                         component: "a",
-                        href: event.locationLink,
+                        href: meeting.locationLink,
                       },
                     }}
                     sx={{ fontWeight: 600, fontSize: "md", mb: 1.5 }}
                   >
-                    {/* <Typography level="title-md" fontWeight="600"> */}
-                    {event.location}
-                    {/* </Typography> */}
+                    {meeting.location}
                   </Chip>
                 )}
+
                 <Divider sx={{ mt: 0.5, mb: 1 }} />
-                {event.description !== "" && (
-                  <Typography>{event.description}</Typography>
+
+                {/* Only show description if it exists */}
+                {meeting.description !== "" && (
+                  <Typography>{meeting.description}</Typography>
                 )}
               </CardContent>
             </Card>
           </Grid>
         ))}
       </Grid>
-    </Stack>
+    </>
   );
 }
-
-// spacing={2} direction="column"

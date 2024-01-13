@@ -1,5 +1,5 @@
 import { extendTheme } from "@mui/joy";
-import "@fontsource-variable/source-sans-3";
+import "@fontsource-variable/source-sans-3"; // Supports weights 200-900
 
 const theme = extendTheme({
   fontFamily: {

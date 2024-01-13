@@ -1,10 +1,8 @@
 "use client";
-import { Breadcrumbs, Button, Grid, Link, Stack, Typography } from "@mui/joy";
+import { Breadcrumbs, Link, Stack, Typography } from "@mui/joy";
 import NextLink from "next/link";
-import { usePathname } from "next/navigation";
-import ProjectCard from "../../_components/ProjectCard";
 import ProjectsGrid from "../../_components/ProjectsGrid";
-import { getProjectsFromSemester, prettyPrintSemester } from "../../all-projects";
+import { getProjectsFromSemester, prettyPrintSemester } from "../../projects";
 
 export default function Page({ params }: { params: { semester: string } }) {
   return (
@@ -19,15 +17,18 @@ export default function Page({ params }: { params: { semester: string } }) {
         sx={{ p: 0, mb: 1 }}
       >
         {[{ displayName: "Projects", url: "/projects" }].map((page, idx) => (
-          <Typography level="h1">
+          <Typography level="h1" key={idx}>
             <Link component={NextLink} href={page.url} passHref color="neutral">
               {page.displayName}
             </Link>
           </Typography>
         ))}
+
+        {/* Heading with semester as specified in url */}
         <Typography level="h1">{prettyPrintSemester(params.semester)}</Typography>
       </Breadcrumbs>
 
+      {/* Get projects grid from semester as specified in url */}
       <ProjectsGrid projects={getProjectsFromSemester(params.semester)} />
     </Stack>
   );

@@ -1,23 +1,19 @@
-"use client";
-import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import { IconButton, Link, Typography } from "@mui/joy";
+// "use client";
+import CloseIcon from "@mui/icons-material/Close";
+import MenuIcon from "@mui/icons-material/Menu";
+import { IconButton, Typography } from "@mui/joy";
 import Box from "@mui/joy/Box";
-import Button from "@mui/joy/Button";
 import Drawer from "@mui/joy/Drawer";
 import List from "@mui/joy/List";
 import ListItem from "@mui/joy/ListItem";
 import ListItemButton from "@mui/joy/ListItemButton";
 import NextLink from "next/link";
 import * as React from "react";
-import MenuIcon from "@mui/icons-material/Menu";
-import CloseIcon from "@mui/icons-material/Close";
-import DeveloperBoardIcon from "@mui/icons-material/DeveloperBoard";
 import { NAV_LINKS } from "./TopBar";
 
 export default function NavDrawer() {
   const [open, setOpen] = React.useState(false);
 
-  const thing = CalendarMonthIcon;
   const toggleDrawer =
     (inOpen: boolean) => (event: React.KeyboardEvent | React.MouseEvent) => {
       if (
@@ -33,17 +29,13 @@ export default function NavDrawer() {
 
   return (
     <Box sx={{ display: "flex" }}>
-      {/* <Button variant="outlined" color="neutral" onClick={toggleDrawer(true)}>
-        Open drawer
-      </Button> */}
-
       <IconButton
         size="lg"
         onClick={toggleDrawer(true)}
         sx={{
+          // Only shown on mobile
           display: { xs: "flex", sm: "none" },
           height: 20,
-          // backgroundColor: "red",
           alignSelf: "center",
         }}
       >
@@ -70,7 +62,6 @@ export default function NavDrawer() {
               sx={{
                 height: 20,
                 marginRight: 2,
-                // backgroundColor: "red",
                 alignSelf: "flex-end",
               }}
             >
@@ -91,7 +82,6 @@ export default function NavDrawer() {
                     sx={{
                       alignItems: "center",
                       display: "flex",
-                      // color: "primary.400",
                     }}
                   >
                     {React.createElement(page.icon, {
@@ -104,16 +94,6 @@ export default function NavDrawer() {
                 </ListItemButton>
               </ListItem>
             ))}
-            {/* <Box
-              sx={{
-                backgroundColor: "red",
-                position: "absolute",
-                right: 0,
-                marginRight: 2,
-              }}
-            >
- 
-            </Box> */}
           </List>
         </Box>
       </Drawer>
