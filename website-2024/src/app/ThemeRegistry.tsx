@@ -56,12 +56,16 @@ export default function ThemeRegistry(props: { options: any; children: any }) {
 
   return (
     <CacheProvider value={cache}>
+      {/* The custom theme is optional */}
       <CssVarsProvider defaultMode="system" theme={theme}>
+        {/* Prevent flashing when reloading on dark mode */}
         {getInitColorSchemeScript()}
-        {/* theme={theme}> */}
-        {/* the custom theme is optional */}
+
         <CssBaseline />
+
+        {/* Make everything just a bit bigger by default */}
         <GlobalStyles styles={{ html: { fontSize: 18 } }} />
+
         {children}
       </CssVarsProvider>
     </CacheProvider>

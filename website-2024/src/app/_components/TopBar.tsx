@@ -62,7 +62,6 @@ export default function TopBar() {
           alignItems: "center",
           justifyContent: "flex-end",
           gap: 10,
-          color: "pageLink.primary",
         }}
       >
         {NAV_LINKS.map((link, idx) => (
