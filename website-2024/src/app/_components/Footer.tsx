@@ -29,7 +29,7 @@ export default function Footer() {
                 component="a"
                 href="https://discord.gg/yCPDb8YRRp"
                 target="_blank"
-                size="sm"
+                size="md"
               >
                 <FontAwesomeIcon icon={faDiscord} size="lg" />
               </IconButton>
@@ -37,7 +37,7 @@ export default function Footer() {
                 component="a"
                 href="https://www.instagram.com/project.code.uiuc/"
                 target="_blank"
-                size="sm"
+                size="md"
               >
                 <InstagramIcon />
               </IconButton>
@@ -45,7 +45,7 @@ export default function Footer() {
                 component="a"
                 href="https://www.linkedin.com/company/23690855"
                 target="_blank"
-                size="sm"
+                size="md"
               >
                 <LinkedInIcon />
               </IconButton>
