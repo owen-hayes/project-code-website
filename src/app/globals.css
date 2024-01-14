@@ -1,0 +1,21 @@
+:root {
+  /* If footer content changes, you might need to change this var to get more space at very end of page */
+  --footer-height: 7rem;
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: var(--footer-height);
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--footer-height);
+}
