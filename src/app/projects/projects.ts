@@ -62,7 +62,7 @@ const PROJECTS: Project[] = [
     started: "fall-2023",
     alsoActiveIn: [],
     viewProjectLink: "",
-    sourceCodeLink: "",
+    sourceCodeLink: "https://github.com/elddc/openspace",
     description: "Details coming soon",
   },
 
