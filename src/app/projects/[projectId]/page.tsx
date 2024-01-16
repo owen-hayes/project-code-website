@@ -144,7 +144,7 @@ export default function Page({ params }: { params: { projectId: string } }) {
 
       {/* Description */}
       {project.description && (
-        <Typography mt={2} level="body-lg">
+        <Typography mt={2} level="body-lg" whiteSpace='pre-line'>
           {project.description}
         </Typography>
       )}

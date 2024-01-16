@@ -72,7 +72,11 @@ const PROJECTS: Project[] = [
     alsoActiveIn: [],
     viewProjectLink: "https://openspace.projectcodeuiuc.org",
     sourceCodeLink: "https://github.com/elddc/openspace",
-    description: "",
+    description: `This project aggregates and visualizes the occupancy of public spaces on campus.
+
+      Many students have issues finding space on campus in high-demand areas. To help students make more informed decisions, we utilize web scraping and crowdsourcing data to estimate occupancy, and display our estimates in an user-friendly map interface.
+      
+      Data is currently sourced from Campus Recreation and university libraries.`,
   },
 
   {
