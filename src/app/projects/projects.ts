@@ -61,9 +61,9 @@ const PROJECTS: Project[] = [
     contributors: [],
     started: "fall-2023",
     alsoActiveIn: [],
-    viewProjectLink: "",
+    viewProjectLink: "https://openspace.projectcodeuiuc.org",
     sourceCodeLink: "https://github.com/elddc/openspace",
-    description: "Details coming soon",
+    description: "",
   },
 
   {
@@ -159,7 +159,7 @@ export interface Project {
   /**
    * Description of the project.
    */
-  description?: string;
+  description?: string | any;
 }
 
 /**
