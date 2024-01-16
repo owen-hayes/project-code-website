@@ -58,12 +58,25 @@ const PROJECTS: Project[] = [
     emoji: "🗺️",
     areas: ["Web Dev"],
     projectManagers: [{ name: "Emma Chen", email: "emmahc2@illinois.edu" }],
-    contributors: [],
+    contributors: [
+      "Kenny Zhou",
+      "Sunwoo Baek",
+      "Ifra Baig",
+      "Raghav Chandrasekar",
+      "Andrew Di",
+      "Hela Kasibhotla",
+      "Rachel Madamba",
+      "Kevin Zhou",
+    ],
     started: "fall-2023",
     alsoActiveIn: [],
     viewProjectLink: "https://openspace.projectcodeuiuc.org",
     sourceCodeLink: "https://github.com/elddc/openspace",
-    description: "",
+    description: `This project aggregates and visualizes the occupancy of public spaces on campus.
+
+      Many students have issues finding space on campus in high-demand areas. To help students make more informed decisions, we utilize web scraping and crowdsourcing data to estimate occupancy, and display our estimates in an user-friendly map interface.
+      
+      Data is currently sourced from Campus Recreation and university libraries.`,
   },
 
   {
