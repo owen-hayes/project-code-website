@@ -78,17 +78,22 @@ export default function Page() {
       </Typography>
 
       <Grid container spacing={3} justifyContent="center">
-        {PROJECT_MANAGERS.map((pm) => (
-          <Grid xs={6} sm={4} md={3} lg={2.4}>
-            <BioCard
-              name={pm.name}
-              initials={pm.initials}
-              role={pm.role}
-              linkedInURL={pm.linkedInURL}
-              photoURL={pm.photoURL}
-            />
-          </Grid>
-        ))}
+        {PROJECT_MANAGERS
+          // Sort alphabetically by name
+          .sort((a, b) => (a.name < b.name ? -1 : 1))
+
+          // Map each PM to a BioCard
+          .map((pm) => (
+            <Grid xs={6} sm={4} md={3} lg={2.4}>
+              <BioCard
+                name={pm.name}
+                initials={pm.initials}
+                role={pm.role}
+                linkedInURL={pm.linkedInURL}
+                photoURL={pm.photoURL}
+              />
+            </Grid>
+          ))}
 
         <Grid xs={12} sm={6} md={6} lg={4}>
           <Card sx={{ height: "100%" }}>
