@@ -19,10 +19,11 @@ export interface ProjectsGridProps {
 export default function ProjectsGrid({
   projects,
   showPMApplication,
-  showMatchingForm
+  showMatchingForm,
 }: ProjectsGridProps) {
   return (
     <Grid container spacing={3}>
+      {/* Show info box about PM application when specified to be shown */}
       {showPMApplication && (
         <Grid xs={12} sm={6} md={4}>
           <Card sx={{ height: "100%" }}>
@@ -49,6 +50,7 @@ export default function ProjectsGrid({
         </Grid>
       )}
 
+      {/* Show info box about matching form when specified to be shown */}
       {showMatchingForm && (
         <Grid xs={12} sm={6} md={4}>
           <Card sx={{ height: "100%" }}>
@@ -59,7 +61,7 @@ export default function ProjectsGrid({
                 Meeting #2!
               </Typography>
             </CardContent>
-            
+
             <CardActions>
               <Button
                 size="md"
@@ -76,17 +78,22 @@ export default function ProjectsGrid({
         </Grid>
       )}
 
-      {projects.map((project, idx) => (
-        <Grid xs={12} sm={6} md={4} key={idx}>
-          <ProjectCard
-            title={project.title}
-            projectManagers={project.projectManagers}
-            areas={project.areas}
-            emoji={project.emoji}
-            id={project.id}
-          />
-        </Grid>
-      ))}
+      {projects
+        // Sort alphabetically by title
+        .sort((a, b) => (a.title < b.title ? -1 : 1))
+
+        // Map each project to a grid item with a project card inside
+        .map((project, idx) => (
+          <Grid xs={12} sm={6} md={4} key={idx}>
+            <ProjectCard
+              title={project.title}
+              projectManagers={project.projectManagers}
+              areas={project.areas}
+              emoji={project.emoji}
+              id={project.id}
+            />
+          </Grid>
+        ))}
     </Grid>
   );
 }
