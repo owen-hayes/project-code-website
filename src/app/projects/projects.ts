@@ -111,6 +111,22 @@ const PROJECTS: Project[] = [
     sourceCodeLink: "",
     description: "Details coming soon",
   },
+
+  {
+    id: "housing-listing-platform",
+    title: "Housing Listing Platform",
+    emoji: "🏠",
+    areas: ["Web Dev"],
+    projectManagers: [
+      { name: "Karthik Bagavathy", email: "kb42@illinois.edu" },
+    ],
+    contributors: [],
+    started: "fall-2023",
+    alsoActiveIn: ["spring-2024"],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  }, 
 ];
 
 /**
