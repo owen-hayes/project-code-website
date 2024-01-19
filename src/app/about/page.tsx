@@ -1,15 +1,6 @@
 "use client";
-import LaunchIcon from "@mui/icons-material/Launch";
-import {
-  Button,
-  Card,
-  CardActions,
-  CardContent,
-  Grid,
-  Link,
-  Stack,
-  Typography,
-} from "@mui/joy";
+import { Grid, Link, Stack, Typography } from "@mui/joy";
+import PMApplicationCard from "../projects/_components/PMApplicationCard";
 import BioCard from "./_components/BioCard";
 import { EXEC } from "./_people/exec";
 import { PROJECT_MANAGERS } from "./_people/project-managers";
@@ -95,27 +86,9 @@ export default function Page() {
             </Grid>
           ))}
 
+        {/* Update PMApplicationCard as necessary */}
         <Grid xs={12} sm={6} md={6} lg={4}>
-          <Card sx={{ height: "100%" }}>
-            <CardContent>
-              <Typography level="h3">Want to lead a project?</Typography>
-              <Typography>
-                Spring 2024 Project Manager applications are open!
-              </Typography>
-            </CardContent>
-            <CardActions>
-              <Button
-                size="md"
-                // startDecorator={<FeedIcon />}
-                endDecorator={<LaunchIcon />}
-                component="a"
-                href="https://forms.gle/X6nvij6nT17H7nTd7"
-                target="_blank"
-              >
-                Apply
-              </Button>
-            </CardActions>
-          </Card>
+          <PMApplicationCard />
         </Grid>
       </Grid>
 
