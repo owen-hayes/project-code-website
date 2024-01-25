@@ -83,7 +83,7 @@ const PROJECTS: Project[] = [
     id: "wikipedia-similarity",
     title: "Wikipedia Similarity Applications",
     emoji: "📊",
-    areas: ["Data Viz"],
+    areas: ["Data Science", "Web Dev"],
     projectManagers: [
       { name: "Saket Pochiraju", email: "saketmp2@illinois.edu" },
     ],
