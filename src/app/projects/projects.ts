@@ -46,7 +46,7 @@ const PROJECTS: Project[] = [
     ],
     contributors: [],
     started: "fall-2023",
-    alsoActiveIn: [],
+    alsoActiveIn: ["spring-2024"],
     viewProjectLink: "",
     sourceCodeLink: "",
     description: "Details coming soon",
@@ -126,7 +126,7 @@ const PROJECTS: Project[] = [
     viewProjectLink: "",
     sourceCodeLink: "",
     description: "Details coming soon",
-  }, 
+  },
 ];
 
 /**
