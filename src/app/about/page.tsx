@@ -31,9 +31,14 @@ export default function Page() {
 
       <Typography level="body-lg" mt={2}>
         In the first few weeks of the semester, we ask students to pick the
-        project they are most interested in working on. Then, we try to match
-        everyone to a project group based on their preference and past
-        experience.
+        project they are most interested in working on. Then, we match people to
+        project groups based on their preferences and past experience.{" "}
+        <Typography fontStyle="italic">
+          Due to the large number of applicants and a limited number of Project
+          Managers, we are usually unable to match everyone to a group. The best
+          way to increase your chances of joining a group is to clearly state
+          and demonstrate your interest in the Project Matching Form.
+        </Typography>
       </Typography>
 
       <Typography level="body-lg" mt={2}>
@@ -41,7 +46,7 @@ export default function Page() {
         to work towards the final goal of the project. Project members present
         their progress to the rest of the organization halfway through the
         semester and also give a final presentation about their project at the
-        end of the semester.
+        end of the semester!
       </Typography>
 
       {/* <Divider sx={{ my: 3 }} /> */}
@@ -87,9 +92,9 @@ export default function Page() {
           ))}
 
         {/* Update PMApplicationCard as necessary */}
-        <Grid xs={12} sm={6} md={6} lg={4}>
+        {/* <Grid xs={12} sm={6} md={6} lg={4}>
           <PMApplicationCard />
-        </Grid>
+        </Grid> */}
       </Grid>
 
       <Typography level="h2" mt={3} mb={1}>
