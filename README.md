@@ -55,8 +55,8 @@ If you'd like to make a contribution, please fork the project, submit a Pull Req
 
 #### Updating exec board members and Project Managers on the about page
 
-- Update the `EXEC` array in [`src/app/exec.ts`](src/app/exec.ts)
-- Update the `PROJECT_MANAGERS` array in [`src/app/project-managers.ts`](src/app/project-managers.ts)
+- Update the `EXEC` array in [`src/app/about/_people/exec.ts`](src/app/about/_people/exec.ts)
+- Update the `PROJECT_MANAGERS` array in [`src/app/about/_people/project-managers.ts`](src/app/about/_people/project-managers.ts)
 
 #### Updating projects
 
