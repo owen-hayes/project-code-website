@@ -87,9 +87,9 @@ export default function Page() {
           ))}
 
         {/* Update PMApplicationCard as necessary */}
-        <Grid xs={12} sm={6} md={6} lg={4}>
+        {/* <Grid xs={12} sm={6} md={6} lg={4}>
           <PMApplicationCard />
-        </Grid>
+        </Grid> */}
       </Grid>
 
       <Typography level="h2" mt={3} mb={1}>
