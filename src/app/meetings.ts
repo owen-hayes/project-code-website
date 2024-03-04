@@ -23,28 +23,29 @@ export const MEETINGS: Meeting[] = [
     description:
       "Learn about the projects being held this semester and select the project you are most interested in working on!",
   },
+
   {
-    title: "More meetings coming soon!",
-    // date: "Wed, Jan 24, 2024, 6–7 PM",
+    title: "General Meeting #3 – Midpoint Presentations",
+    date: "Wed, Mar 20, 2024, 6–7 PM",
+    location: "Siebel 1404",
+    locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
     description:
-      "Keep an eye on Discord and this site so you never miss a meeting! You can also subscribe to our calendar with the links above.",
+      "Hear from project groups about the progress they've made so far this semester!",
+  },
+
+  {
+    title: "General Meeting #4 – Final Presentations",
+    date: "Late April (Date & Time TBA)",
+    location: "Siebel 1404",
+    locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
+    description:
+      "Hear from project groups again and see each team's final product!",
   },
 
   // {
-  //   title: "General Meeting #3 – Midpoint Presentations",
-  //   date: "Early March (Date & Time TBA)",
-  //   location: "Siebel 1404",
-  //   locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
+  //   title: "More meetings coming soon!",
+  //   // date: "Wed, Jan 24, 2024, 6–7 PM",
   //   description:
-  //     "Hear from project groups about the progress they've made so far this semester!",
-  // },
-  // 
-  // {
-  //   title: "General Meeting #4 – Final Presentations",
-  //   date: "Late April (Date & Time TBA)",
-  //   location: "Siebel 1404",
-  //   locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
-  //   description:
-  //     "Hear again from project groups and see each team's final product!",
+  //     "Keep an eye on Discord and this site so you never miss a meeting! You can also subscribe to our calendar with the links above.",
   // },
 ];
