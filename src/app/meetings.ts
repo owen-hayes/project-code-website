@@ -27,8 +27,8 @@ export const MEETINGS: Meeting[] = [
   {
     title: "General Meeting #3 – Midpoint Presentations",
     date: "Wed, Mar 20, 2024, 6–7 PM",
-    location: "Siebel 1404",
-    locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
+    location: "Everitt 2310",
+    locationLink: "https://maps.app.goo.gl/4Qvtwwq8ay985xJM9",
     description:
       "Hear from project groups about the progress they've made so far this semester!",
   },
