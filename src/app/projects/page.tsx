@@ -5,15 +5,15 @@ import NextLink from "next/link";
 import ProjectsGrid from "./_components/ProjectsGrid";
 import { getProjectsFromSemester, prettyPrintSemester } from "./projects";
 
-const CURRENT_SEMESTER = "spring-2024";
+const CURRENT_SEMESTER = "fall-2024";
 
 // Suggestion: put more recent semesters at beginning (e.g., [spring-2024, fall-2023, spring-2023, ...])
-const PREVIOUS_SEMESTERS = ["fall-2023"];
+const PREVIOUS_SEMESTERS = ["spring-2024", "fall-2023"];
 
 export default function Page() {
   return (
     <>
-      <Typography level="h1" mb={1}>
+      <Typography level="h1" mt={3} mb={2}>
         Projects
       </Typography>
 
@@ -25,8 +25,8 @@ export default function Page() {
       {/* Grid of projects from current semester */}
       <ProjectsGrid
         projects={getProjectsFromSemester(CURRENT_SEMESTER)}
-        showPMApplication
-        // showMatchingForm
+        // showPMApplication
+        showMatchingForm
       />
 
       <Typography level="h2" mt={5}>

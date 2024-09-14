@@ -8,16 +8,16 @@ export interface Meeting {
 
 export const MEETINGS: Meeting[] = [
   {
-    title: "General Meeting #1 – Info Session",
-    date: "Thu, Jan 18, 2024, 6–7 PM",
+    title: "General Meeting #1 - Info Session",
+    date: "Thu, Sep 5, 2024, 6-7 PM",
     location: "Siebel 1404",
     locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
     description:
       "Learn more about Project: Code and how to get started on a project this semester!",
   },
   {
-    title: "General Meeting #2 – Projects Intro",
-    date: "Thu, Jan 25, 2024, 6–7 PM",
+    title: "General Meeting #2 - Codeium Tech Talk & Projects Intro",
+    date: "Thu, Sep 12, 2024, 6-8 PM",
     location: "Siebel 1404",
     locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
     description:
@@ -25,19 +25,19 @@ export const MEETINGS: Meeting[] = [
   },
 
   {
-    title: "General Meeting #3 – Midpoint Presentations",
-    date: "Wed, Mar 20, 2024, 6–7 PM",
-    location: "Everitt 2310",
-    locationLink: "https://maps.app.goo.gl/4Qvtwwq8ay985xJM9",
+    title: "General Meeting #3 - Midpoint Presentations",
+    date: "Oct TBA, 2024",
+    location: "Location TBA",
+    locationLink: "",
     description:
       "Hear from project groups about the progress they've made so far this semester!",
   },
 
   {
-    title: "General Meeting #4 – Final Presentations",
-    date: "Wed, Apr 24, 2024, 6–7 PM",
-    location: "Siebel 1404",
-    locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
+    title: "General Meeting #4 - Final Presentations",
+    date: "Dec TBA, 2024",
+    location: "Location TBA",
+    locationLink: "",
     description:
       "Hear from project groups again and see each team's final product!",
   },

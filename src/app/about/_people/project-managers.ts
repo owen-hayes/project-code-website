@@ -2,116 +2,112 @@ import { Person } from "./Person";
 
 export const PROJECT_MANAGERS: Person[] = [
   {
-    name: "Ananth Ramaswamy",
-    initials: "AR",
+    name: "Aakash Kothari",
+    initials: "AK",
     linkedInURL: "",
     photoURL: "",
   },
-
   {
-    name: "Saket Pochiraju",
-    initials: "SP",
+    name: "Allison Prabakar",
+    initials: "AP",
     linkedInURL: "",
     photoURL: "",
   },
-
   {
-    name: "Jo Mohan",
-    initials: "JM",
+    name: "Pari Patel",
+    initials: "PP",
     linkedInURL: "",
     photoURL: "",
   },
-
   {
-    name: "Litao Li",
-    initials: "LL",
+    name: "Kshitij Jalan",
+    initials: "KJ",
     linkedInURL: "",
     photoURL: "",
   },
-
   {
-    name: "Karthik Bagavathy",
-    initials: "KB",
+    name: "Sohum Sharma",
+    initials: "SS",
     linkedInURL: "",
     photoURL: "",
   },
-
+  {
+    name: "Akshat Mehrotra",
+    initials: "AM",
+    linkedInURL: "",
+    photoURL: "",
+  },
+  {
+    name: "Dash Kamriani Beard",
+    initials: "DKB",
+    linkedInURL: "",
+    photoURL: "",
+  },
+  {
+    name: "Joshua Chen",
+    initials: "JC",
+    linkedInURL: "",
+    photoURL: "",
+  },
+  {
+    name: "Griffin Burke",
+    initials: "GB",
+    linkedInURL: "",
+    photoURL: "",
+  },
+  {
+    name: "Sohum Shah",
+    initials: "SS",
+    linkedInURL: "",
+    photoURL: "",
+  },
+  {
+    name: "Isaac Ang",
+    initials: "IA",
+    linkedInURL: "",
+    photoURL: "",
+  },
   {
     name: "Amaan Bakshi",
     initials: "AB",
     linkedInURL: "",
     photoURL: "",
   },
-
   {
-    name: "Varun Sharma",
-    initials: "VS",
+    name: "Aayan Verma",
+    initials: "AV",
     linkedInURL: "",
     photoURL: "",
   },
-
   {
-    name: "Aniruddha Lappathi",
-    initials: "AL",
+    name: "Anvesha Saraf",
+    initials: "AS",
     linkedInURL: "",
     photoURL: "",
   },
-
   {
-    name: "Agilan Gunashankar",
-    initials: "AG",
+    name: "Sidharth Jain",
+    initials: "SJ",
     linkedInURL: "",
     photoURL: "",
   },
-
   {
-    name: "Arya Deora",
-    initials: "AD",
+    name: "Nathan Amankwah",
+    initials: "NA",
     linkedInURL: "",
     photoURL: "",
   },
-
   {
-    name: "William Liu",
-    initials: "WL",
+    name: "Shirley Ma",
+    initials: "SM",
     linkedInURL: "",
     photoURL: "",
   },
-
   {
-    name: "Advay Kadam",
-    initials: "AK",
-    linkedInURL: "",
-    photoURL: "",
-  },
-
-  {
-    name: "Abhinav Mahesh",
+    name: "Aishwarya Manoj",
     initials: "AM",
     linkedInURL: "",
     photoURL: "",
   },
-
-  {
-    name: "Neel Ghoshal",
-    initials: "NG",
-    linkedInURL: "",
-    photoURL: "",
-  },
-
-  {
-    name: "Yiwei Gong",
-    initials: "YG",
-    linkedInURL: "",
-    photoURL: "",
-  },
-
-  {
-    name: "Jay Wagh",
-    initials: "JW",
-    linkedInURL: "",
-    photoURL: "",
-  },
-
   // TODO: Add PMs from Fall 2023
 ];

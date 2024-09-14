@@ -21,7 +21,7 @@ export default function Home() {
   return (
     <>
       {/* Main heading */}
-      <Typography level="h1" sx={{ textAlign: "center", mb: 1, fontSize: 48 }}>
+      <Typography level="h1" sx={{ textAlign: "center", mb: 4, fontSize: 48 }}>
         <Typography fontWeight="normal" display={{ xs: "block", sm: "inline" }}>
           Welcome to{" "}
         </Typography>
@@ -84,8 +84,8 @@ export default function Home() {
                 startDecorator={<MailIcon />}
                 fullWidth
                 component="a"
-                href="https://forms.gle/x7JLMNzbmNFLRipAA"
-                target="_blank"
+                href="/subscribe"
+                // target="_blank"
                 sx={{ height: "100%" }}
               >
                 JOIN OUR MAILING LIST
