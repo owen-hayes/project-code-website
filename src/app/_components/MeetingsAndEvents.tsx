@@ -9,7 +9,7 @@ import { MEETINGS } from "../meetings";
 export default function MeetingsAndEvents() {
   return (
     <>
-      <Typography level="h2">Meetings and Events</Typography>
+      <Typography level="h2" mb={2}>Meetings and Events</Typography>
 
       {/* Chip buttons to subscribe to Apple/Google calendar feed */}
       <Grid container spacing={0.5}>
@@ -80,7 +80,7 @@ export default function MeetingsAndEvents() {
 
                 {/* Only show date if it exists */}
                 {meeting.date && meeting.date !== "" && (
-                  <Typography level="title-md">{meeting.date}</Typography>
+                  <Typography mb={1} level="title-md">{meeting.date}</Typography>
                 )}
 
                 {/* Only show location if it exists */}

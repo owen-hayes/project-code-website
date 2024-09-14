@@ -8,7 +8,7 @@ import { PROJECT_MANAGERS } from "./_people/project-managers";
 export default function Page() {
   return (
     <Stack>
-      <Typography level="h1">About us</Typography>
+      <Typography mt={3} mb={2} level="h1">About us</Typography>
 
       <Typography level="body-lg">
         Project: Code was founded in 2019 to provide UIUC students of all
@@ -51,7 +51,7 @@ export default function Page() {
 
       {/* <Divider sx={{ my: 3 }} /> */}
 
-      <Typography level="h2" mt={2} mb={1}>
+      <Typography level="h2" mt={3} mb={2}>
         Exec Board
       </Typography>
 
@@ -69,7 +69,7 @@ export default function Page() {
         ))}
       </Grid>
 
-      <Typography level="h2" mt={3} mb={1}>
+      <Typography level="h2" mt={5} mb={2}>
         Project Managers
       </Typography>
 
@@ -97,7 +97,7 @@ export default function Page() {
         </Grid> */}
       </Grid>
 
-      <Typography level="h2" mt={3} mb={1}>
+      <Typography level="h2" mt={5} mb={1}>
         Contact
       </Typography>
       <Typography>

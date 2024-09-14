@@ -5,6 +5,225 @@
  * is used for accessing projects from previous semesters.
  */
 const PROJECTS: Project[] = [
+  // fall 2024
+  {
+    id: "fitness-app",
+    title: "Fitness App",
+    emoji: "💪",
+    areas: ["App Dev", "ML"],
+    projectManagers: [
+      { name: "Aakash Kothari", email: "kots.aakash@gmail.com" },
+      { name: "Allison Prabakar", email: "aprab6@illinois.edu" },
+      { name: "Pari Patel", email: "parip2@illinois.edu" },
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "ehr-system",
+    title: "Electronic Health Record System",
+    emoji: "🩻",
+    areas: ["App Dev"],
+    projectManagers: [
+      { name: "Kshitij Jalan", email: "kjalan3@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "cv-rankings",
+    title: "Computer Vision Model Rankings",
+    emoji: "🥈",
+    areas: ["Computer Vision", "Web Dev"],
+    projectManagers: [
+      { name: "Sohum Sharma", email: "sohums3@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "gesture-wand",
+    title: "Gesture-Controlled Wand",
+    emoji: "🪄",
+    areas: ["Hardware", "ML"],
+    projectManagers: [
+      { name: "Akshat Mehrotra", email: "akshatm4@illinois.edu" },
+      { name: "Dash Kamriani Beard", email: "dashpk2@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "chess-engine",
+    title: "Chess Engine",
+    emoji: "♟️",
+    areas: ["ML", "Algorithms"],
+    projectManagers: [
+      { name: "Joshua Chen", email: "jhchen6@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "company-match",
+    title: "CompanyMatch",
+    emoji: "💼",
+    areas: ["NLP", "Web Dev"],
+    projectManagers: [
+      { name: "Griffin Burke", email: "gjburke2@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "investor-sentiment-analysis",
+    title: "Investor Sentiment Analysis",
+    emoji: "📈",
+    areas: ["NLP"],
+    projectManagers: [
+      { name: "Sohum Shah", email: "sohum1094@gmail.com" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "therapy-chatbot",
+    title: "Therapy Chatbot",
+    emoji: "💬",
+    areas: ["NLP"],
+    projectManagers: [
+      { name: "Isaac Ang", email: "isaacya2@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "fantasy-trading-room",
+    title: "Fantasy Trading Room",
+    emoji: "🏈",
+    areas: ["Web Dev", "App Dev", "NLP", "Data Analytics"],
+    projectManagers: [
+      { name: "Amaan Bakshi", email: "amaanbakshi777@gmail.com" },
+      { name: "Aayan Verma", email: "aayanv2@illinois.edu" },
+      { name: "Anmol Shah", email: "anmols3@illinois.edu" },
+      { name: "Aruv Dand", email: "aadand2@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: ["spring-2024"],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "event-matchmaking",
+    title: "Event Matchmaking Website",
+    emoji: "👥",
+    areas: ["Web Dev", "ML"],
+    projectManagers: [
+      { name: "Anvesha Saraf", email: "anvesha4@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "discord-wiki",
+    title: "Dynamic Discord Wikis",
+    emoji: "📑",
+    areas: ["Web Dev", "NLP"],
+    projectManagers: [
+      { name: "Nathan Amankwah", email: "nathan37@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "language-exchange",
+    title: "Language Exchange Website",
+    emoji: "🗣️",
+    areas: ["Web Dev"],
+    projectManagers: [
+      { name: "Shirley Ma", email: "shirleyma2004@gmail.com" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "uiuc-e-commerce",
+    title: "UIUC E-Commerce Website",
+    emoji: "🛒",
+    areas: ["Web Dev"],
+    projectManagers: [
+      { name: "Aishwarya Manoj", email: "am133@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+  {
+    id: "music-recommendation",
+    title: "Music Recommendation",
+    emoji: "🎧",
+    areas: ["Web Dev", "NLP", "Data Analytics"],
+    projectManagers: [
+      { name: "Sidharth Jain", email: "sj54@illinois.edu" }
+    ],
+    contributors: [],
+    started: "fall-2024",
+    alsoActiveIn: [],
+    viewProjectLink: "",
+    sourceCodeLink: "",
+    description: "Details coming soon",
+  },
+
+  // pre-2024
   {
     id: "bird-guide",
     title: "Bird Guide",
