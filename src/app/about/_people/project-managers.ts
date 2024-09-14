@@ -100,8 +100,8 @@ export const PROJECT_MANAGERS: Person[] = [
   {
     name: "Shirley Ma",
     initials: "SM",
-    linkedInURL: "",
-    photoURL: "",
+    linkedInURL: "https://www.linkedin.com/in/shirleyma2004",
+    photoURL: "/pm-photos/shirley-ma.jpg",
   },
   {
     name: "Aishwarya Manoj",
