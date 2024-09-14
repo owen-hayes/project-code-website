@@ -40,8 +40,8 @@ export const PROJECT_MANAGERS: Person[] = [
   {
     name: "Dash Kamriani Beard",
     initials: "DKB",
-    linkedInURL: "",
-    photoURL: "",
+    linkedInURL: "https://www.linkedin.com/in/dpkb/",
+    photoURL: "/pm-photos/dash-kamriani-beard.jpg",
   },
   {
     name: "Joshua Chen",
