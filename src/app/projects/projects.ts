@@ -4,6 +4,8 @@
  * Note: Do not give a project an id of "old", as "/projects/old/[semester]"
  * is used for accessing projects from previous semesters.
  */
+
+
 const PROJECTS: Project[] = [
   // fall 2024
   {
@@ -175,7 +177,8 @@ const PROJECTS: Project[] = [
     alsoActiveIn: [],
     viewProjectLink: "",
     sourceCodeLink: "",
-    description: "Details coming soon",
+    description: "",
+    embed: ["https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FJadanPoll%2FDiscord-Wiki%2Fblob%2Fmain%2FBooks_For_Research%2FPR.md&style=default&type=markdown&showLineNumbers=on&showFileMeta=off&showFullPath=on&showCopy=on", '100%', '1435px'],
   },
   {
     id: "language-exchange",
@@ -408,6 +411,11 @@ export interface Project {
    * Description of the project.
    */
   description?: string | any;
+
+  /**
+   * Embed content.
+   */
+  embed?: string[] | any;
 }
 
 /**
