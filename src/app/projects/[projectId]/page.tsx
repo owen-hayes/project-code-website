@@ -8,13 +8,13 @@ import { getProjectById, prettyPrintSemester } from "../projects";
 
 export default function Page({ params }: { params: { projectId: string } }) {
   const project = getProjectById(params.projectId);
-
+  
   // Formats like: "A, B, C"
   const namesFormatter = new Intl.ListFormat("en", {
     style: "narrow",
     type: "conjunction",
   });
-
+  
   // Show "not found" message if project doesn't exist
   if (project === undefined) {
     return (
@@ -26,7 +26,7 @@ export default function Page({ params }: { params: { projectId: string } }) {
       </Typography>
     );
   }
-
+  
   return (
     <>
       {/* Using sheet so absolutely-positioned emoji displays in right spot */}
@@ -147,6 +147,13 @@ export default function Page({ params }: { params: { projectId: string } }) {
         <Typography mt={2} level="body-lg" whiteSpace='pre-line'>
           {project.description}
         </Typography>
+      )}
+
+      {/* Embedded content */}
+      {project.embed && (
+        <div>
+          <iframe src={project.embed[0]} allow="clipboard-write" style={{border: 'none', marginTop: 30, width: project.embed[1], height: project.embed[2]}} allowFullScreen></iframe>
+        </div>
       )}
     </>
   );

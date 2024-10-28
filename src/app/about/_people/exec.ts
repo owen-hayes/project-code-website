@@ -6,7 +6,7 @@ export const EXEC: Person[] = [
     initials: "AD",
     role: "President",
     linkedInURL: "https://www.linkedin.com/in/anhdotg/",
-    photoURL: "/exec-photos/anh.jpg",
+    photoURL: "/exec-photos/anh.png",
   },
   {
     name: "Anantya Kasturi",

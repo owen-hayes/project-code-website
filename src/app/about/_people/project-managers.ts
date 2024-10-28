@@ -40,8 +40,8 @@ export const PROJECT_MANAGERS: Person[] = [
   {
     name: "Dash Kamriani Beard",
     initials: "DKB",
-    linkedInURL: "",
-    photoURL: "",
+    linkedInURL: "https://www.linkedin.com/in/dpkb/",
+    photoURL: "/pm-photos/dash-kamriani-beard.jpg",
   },
   {
     name: "Joshua Chen",
@@ -100,8 +100,8 @@ export const PROJECT_MANAGERS: Person[] = [
   {
     name: "Shirley Ma",
     initials: "SM",
-    linkedInURL: "",
-    photoURL: "",
+    linkedInURL: "https://www.linkedin.com/in/shirleyma2004",
+    photoURL: "/pm-photos/shirley-ma.jpg",
   },
   {
     name: "Aishwarya Manoj",
