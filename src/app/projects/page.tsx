@@ -25,8 +25,8 @@ export default function Page() {
       {/* Grid of projects from current semester */}
       <ProjectsGrid
         projects={getProjectsFromSemester(CURRENT_SEMESTER)}
-        // showPMApplication
-        showMatchingForm
+        showPMApplication
+        // showMatchingForm
       />
 
       <Typography level="h2" mt={5}>

@@ -43,11 +43,4 @@ export const EXEC: Person[] = [
     linkedInURL: "https://www.linkedin.com/in/pavithra-yarlagadda-265b87205/",
     photoURL: "/exec-photos/pavithra.jpg",
   },
-  {
-    name: "Neel Ghoshal",
-    initials: "NG",
-    role: "External Outreach Chair",
-    linkedInURL: "https://www.linkedin.com/in/ng04/",
-    photoURL: "",
-  },
 ];

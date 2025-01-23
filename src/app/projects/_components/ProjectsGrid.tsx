@@ -71,6 +71,7 @@ export default function ProjectsGrid({
               areas={project.areas}
               emoji={project.emoji}
               id={project.id}
+              highlight={project.highlight ? project.highlight : false}
             />
           </Grid>
         ))}
