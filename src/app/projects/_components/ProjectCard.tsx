@@ -14,6 +14,7 @@ import NextLink from "next/link";
 
 import MailIcon from "@mui/icons-material/Mail";
 import { ProjectManager } from "../projects";
+import { light } from "@mui/material/styles/createPalette";
 
 export interface ProjectCardProps {
   title: string;
@@ -21,6 +22,7 @@ export interface ProjectCardProps {
   projectManagers: ProjectManager[];
   areas: string[];
   id: string;
+  highlight: boolean;
 }
 
 /**
@@ -32,9 +34,13 @@ export default function ProjectCard({
   projectManagers,
   areas,
   id,
+  highlight,
 }: ProjectCardProps) {
   return (
-    <Card sx={{ gap: 0, height: "100%" }}>
+    <Card 
+      sx={ highlight ? { gap: 0, height: "100%", backgroundColor: "#fc4d4720", boxShadow: "0px 5px 10px #fc4d4750" } : {gap: 0, height: "100%"}} 
+      color={highlight ? 'primary' : 'neutral'} 
+    >
       <CardContent>
         <Grid container spacing={1}>
           <Grid xs={9} sm={8}>

@@ -166,8 +166,8 @@ const PROJECTS: Project[] = [
   },
   {
     id: "discord-wiki",
-    title: "Dynamic Discord Wikis",
-    emoji: "📑",
+    title: "Discord Search Engine",
+    emoji: "🔍",
     areas: ["Web Dev", "NLP"],
     projectManagers: [
       { name: "Nathan Amankwah", email: "nathan37@illinois.edu" }
@@ -179,6 +179,7 @@ const PROJECTS: Project[] = [
     sourceCodeLink: "",
     description: "",
     embed: ["https://emgithub.com/iframe.html?target=https%3A%2F%2Fgithub.com%2FJadanPoll%2FDiscord-Wiki%2Fblob%2Fmain%2FBooks_For_Research%2FPR.md&style=default&type=markdown&showLineNumbers=on&showFileMeta=off&showFullPath=on&showCopy=on", '100%', '1435px'],
+    highlight: true,
   },
   {
     id: "language-exchange",
@@ -416,6 +417,8 @@ export interface Project {
    * Embed content.
    */
   embed?: string[] | any;
+
+  highlight? : boolean | any;
 }
 
 /**

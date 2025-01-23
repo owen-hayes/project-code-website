@@ -8,16 +8,16 @@ export interface Meeting {
 
 export const MEETINGS: Meeting[] = [
   {
-    title: "General Meeting #1 - Info Session",
-    date: "Thu, Sep 5, 2024, 6-7 PM",
+    title: "Spring General Meeting #1 - Info Session",
+    date: "Thu, Jan 23, 2025, 6-7 PM",
     location: "Siebel 1404",
     locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
     description:
       "Learn more about Project: Code and how to get started on a project this semester!",
   },
   {
-    title: "General Meeting #2 - Codeium Tech Talk & Projects Intro",
-    date: "Thu, Sep 12, 2024, 6-8 PM",
+    title: "Spring General Meeting #2 - Projects Intro",
+    date: "Thu, Jan 30, 2025, 6-7 PM",
     location: "Siebel 1404",
     locationLink: "https://maps.app.goo.gl/yCpsPaRFWMEaEnWt6",
     description:
@@ -25,8 +25,8 @@ export const MEETINGS: Meeting[] = [
   },
 
   {
-    title: "General Meeting #3 - Midpoint Presentations",
-    date: "Oct TBA, 2024",
+    title: "Spring General Meeting #3 - Midpoint Presentations",
+    date: "Mar TBA, 2025",
     location: "Location TBA",
     locationLink: "",
     description:
@@ -35,7 +35,7 @@ export const MEETINGS: Meeting[] = [
 
   {
     title: "General Meeting #4 - Final Presentations",
-    date: "Dec TBA, 2024",
+    date: "Apr TBA, 2025",
     location: "Location TBA",
     locationLink: "",
     description:
